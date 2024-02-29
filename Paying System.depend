@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1709237734 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
+	"Worker.h"
+	<iostream>
+	<string.h>
+
+1709231918 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
+	<iostream>
+	<string.h>
+
+1709231929 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
+	<iostream>
+	<string.h>
+	"Worker.h"
+
