@@ -34,6 +34,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="BankSystem.cpp" />
+		<Unit filename="BankSystem.h" />
 		<Unit filename="Worker.cpp" />
 		<Unit filename="Worker.h" />
 		<Unit filename="main.cpp" />
