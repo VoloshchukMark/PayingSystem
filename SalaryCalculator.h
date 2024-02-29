@@ -1,7 +1,0 @@
-#ifndef SALARYCALCULATOR_H
-#define SALARYCALCULATOR_H
-
-
-
-
-#endif // SALARYCALCULATOR_H
