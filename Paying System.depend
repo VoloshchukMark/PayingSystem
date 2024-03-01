@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1709238166 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
+1709283150 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
 	"Worker.h"
 	<iostream>
 	<string.h>
@@ -8,11 +8,12 @@
 	<iostream>
 	<string.h>
 
-1709243349 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
+1709282941 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
 	"BankSystem.h"
+	"Company.h"
 
 1709243480 source:d:\study\programming\myprojects\payingsystem1\paying system\banksystem.cpp
 	"BankSystem.h"
@@ -21,4 +22,13 @@
 	<cmath>
 
 1709241360 d:\study\programming\myprojects\payingsystem1\paying system\banksystem.h
+
+1709282996 source:d:\study\programming\myprojects\payingsystem1\paying system\company.cpp
+	"Company.h"
+	<iostream>
+	<string.h>
+
+1709282024 d:\study\programming\myprojects\payingsystem1\paying system\company.h
+	<iostream>
+	<string.h>
 

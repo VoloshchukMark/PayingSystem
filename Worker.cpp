@@ -87,10 +87,12 @@ void Worker::changeTitle()
 
 void Worker::showInformation()
 {
-    cout<<endl<<"Name: "<<name<<endl;
+    cout<<"============================================="<<endl;
+    cout<<"Name: "<<name<<endl;
     cout<<"Age: "<<age<<endl;
     cout<<"Sex: "<<sex<<endl;
     cout<<"Job Title: "<<title<<endl;
+    cout<<"============================================="<<endl;
 }
 
 
