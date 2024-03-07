@@ -12,11 +12,13 @@ public:
     void bi_weeklyGrossPay();
     void monthlyGrossPay();
     void semi_monthlyGrossPay();
+    void SalaryCompare(const BankSystem &other);
 
 
     BankSystem();
     BankSystem(double setAnnualSalary);
     ~BankSystem();
+
 };
 
 #endif // BANKSYSTEM_H

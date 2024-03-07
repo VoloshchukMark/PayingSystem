@@ -16,9 +16,11 @@ private:
 public:
     void showInformation();
     void changeName();
+    void changeNameM(string newName);
     void changeAge();
     void changeSex();
     void changeTitle();
+    void switchTitle(const Worker &other);
     void changeInformation()
     {
         changeName();
@@ -30,6 +32,7 @@ public:
 
     Worker();
     Worker(string newName);
+    Worker(Worker &&other);
     Worker(string newName, int newAge);
     Worker(string newName, int newAge, string newSex);
     Worker(string newName, int newAge, string newSex, string newTitle);

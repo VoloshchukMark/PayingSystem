@@ -36,6 +36,8 @@
 		</Compiler>
 		<Unit filename="BankSystem.cpp" />
 		<Unit filename="BankSystem.h" />
+		<Unit filename="Company.cpp" />
+		<Unit filename="Company.h" />
 		<Unit filename="Worker.cpp" />
 		<Unit filename="Worker.h" />
 		<Unit filename="main.cpp" />

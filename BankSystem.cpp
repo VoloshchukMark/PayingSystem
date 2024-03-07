@@ -38,6 +38,16 @@ void BankSystem::semi_monthlyGrossPay()
         cout<<"Your semi-monthly salary is: "<<semi_monthlyGrossPay<<" EUR."<<endl;
     }
 
+void BankSystem::SalaryCompare(const BankSystem &other)
+{
+    if (annualSalary > other.annualSalary)
+    {
+        cout<<"First annual salary is bigger than the second!\n";
+    } else if (annualSalary == other.annualSalary)
+    {
+        cout<<"Both annual salaries are the same!\n";
+    } else{ cout<<"Second annual salary is bigger than the first!\n"; }
+}
 
 
 

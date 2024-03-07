@@ -27,6 +27,21 @@ void Worker::changeName()
             }
 }
 
+void Worker::changeNameM(string name)
+{
+    if (name.size()>20)
+    {
+        cout<<"New name is too long. Try again."<<endl;
+    } else if (name.size()==0)
+        {
+            cout<<"New name is empty. Try again."<<endl;
+        } else
+            {
+                this->name = name;
+                cout<<"The name was successfully updated.\n"<<endl;
+            }
+}
+
 void Worker::changeAge()
 {
     int newAge;
@@ -85,6 +100,7 @@ void Worker::changeTitle()
         }
 }
 
+
 void Worker::showInformation()
 {
     cout<<"============================================="<<endl;
@@ -99,9 +115,17 @@ void Worker::showInformation()
 
 
 Worker::Worker()
-        :Worker("None", 18, "None", "None") {}
+        :Worker("None", 0, "None", "None") {}
     Worker::Worker(string newName)
-        :Worker(newName, 18, "None", "None") {}
+        :Worker(newName, 0, "None", "None") {}
+    Worker::Worker(Worker &&other)
+        :Worker(other.name, other.age, other.sex, other.title) {
+            other.name.clear();
+            other.age = 0;
+            other.sex.clear();
+            other.title.clear();
+            }
+
     Worker::Worker(string newName, int newAge)
         :Worker(newName, newAge, "None", "None") {}
     Worker::Worker(string newName, int newAge, string newSex)

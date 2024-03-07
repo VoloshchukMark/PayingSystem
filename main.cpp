@@ -11,24 +11,29 @@ using namespace std;
 
 int main()
 {
-    {
-        Worker worker1;
-        worker1.changeInformation();
-        worker1.showInformation();
-    {
-        BankSystem pay;
-        pay.showAnnualSalary();
-        pay.weeklyGrossPay();
-        pay.bi_weeklyGrossPay();
-        pay.monthlyGrossPay();
-        pay.semi_monthlyGrossPay();
-    }
-    {
-        Company company1("Slaveland", 69, 3000.0);
-        company1.changeStatistic();
-        company1.showStatistic();
-    }
+//    {
+//        Worker worker1;
+//        worker1.changeInformation();
+//        worker1.showInformation();
+//    }
+//        BankSystem first(500.0);
+//        first.showAnnualSalary();
+//        second.showAnnualSalary();
+//    Worker mark("Name");
+//    {
+//        Worker worker1;
+//        worker1.changeNameM("Boba");
+//        worker1.showInformation();
+//    }
+//        BankSystem first(500.0);
+//        BankSystem second(500.0);
+//        first.SalaryCompare(second);
+    Worker mark{"Mark"};
+    mark.showInformation();
+    Worker vova{move(mark)};
+    mark.showInformation();
+    vova.showInformation();
     return 0;
-    }
 }
+
 

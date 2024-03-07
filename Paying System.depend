@@ -1,27 +1,45 @@
 # depslib dependency file v1.0
-1709283150 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
+174 <<<<<<< Updated upstream
+
+1709830529 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
 	"Worker.h"
 	<iostream>
 	<string.h>
 
-1709231918 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
+1709571298 shed changes
+	"Worker.h"
+	<iostream>
+	<string.h>
+	<iostream>
+	<string.h>
+	"Worker.h"
+	"BankSystem.h"
+	"Company.h"
+	"BankSystem.h"
+	<iostream>
+	<string.h>
+	<cmath>
+
+1709571308 ated upstream
+
+1709628798 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
 	<iostream>
 	<string.h>
 
-1709282941 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
+1709830551 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
 	"BankSystem.h"
 	"Company.h"
 
-1709243480 source:d:\study\programming\myprojects\payingsystem1\paying system\banksystem.cpp
+1709628118 source:d:\study\programming\myprojects\payingsystem1\paying system\banksystem.cpp
 	"BankSystem.h"
 	<iostream>
 	<string.h>
 	<cmath>
 
-1709241360 d:\study\programming\myprojects\payingsystem1\paying system\banksystem.h
+1709628680 d:\study\programming\myprojects\payingsystem1\paying system\banksystem.h
 
 1709282996 source:d:\study\programming\myprojects\payingsystem1\paying system\company.cpp
 	"Company.h"
