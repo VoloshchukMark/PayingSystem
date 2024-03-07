@@ -7,10 +7,36 @@
 
 using namespace std;
 
-
+int BankSystem::numberOfSalaries = 0;
 
 int main()
 {
+    const BankSystem first(500.0);
+    {
+    first.showNumberOfSalaries();
+    first.showAnnualSalary();
+    BankSystem second(500.1);
+    second.showAnnualSalary();
+    first.semi_monthlyGrossPay();
+    first.monthlyGrossPay();
+    first.weeklyGrossPay();
+    first.showNumberOfSalaries();
+    }
+    first.showNumberOfSalaries();
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 //    {
 //        Worker worker1;
 //        worker1.changeInformation();
@@ -28,12 +54,11 @@ int main()
 //        BankSystem first(500.0);
 //        BankSystem second(500.0);
 //        first.SalaryCompare(second);
-    Worker mark{"Mark"};
-    mark.showInformation();
-    Worker vova{move(mark)};
-    mark.showInformation();
-    vova.showInformation();
-    return 0;
-}
+//    Worker mark{"Mark"};
+//    mark.showInformation();
+//    Worker vova{move(mark)};
+//    mark.showInformation();
+//    vova.showInformation();
+
 
 
