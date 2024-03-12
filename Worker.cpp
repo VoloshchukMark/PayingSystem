@@ -125,7 +125,6 @@ Worker::Worker()
             other.sex.clear();
             other.title.clear();
             }
-
     Worker::Worker(string newName, int newAge)
         :Worker(newName, newAge, "None", "None") {}
     Worker::Worker(string newName, int newAge, string newSex)
@@ -133,3 +132,4 @@ Worker::Worker()
     Worker::Worker(string newName, int newAge, string newSex, string newTitle)
         :name{newName}, age{newAge}, sex{newSex}, title{newTitle} {}
     Worker::~Worker() {}
+
