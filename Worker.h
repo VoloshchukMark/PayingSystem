@@ -28,7 +28,6 @@ public:
         changeSex();
         changeTitle();
     }
-    friend std::ostream &operator<<(std::ostream &os, const Worker &obj);
 
     Worker();
     Worker(string newName);
@@ -38,7 +37,7 @@ public:
     Worker(string newName, int newAge, string newSex, string newTitle);
     ~Worker();
     friend std::ostream &operator<<(std::ostream &os, const Worker &obj);
-    friend std::istream &operator>>(std::istream &os, Worker &obj);
+    friend std::istream &operator>>(std::istream &is, Worker &obj);
 };
 
 #endif // WORKER_H

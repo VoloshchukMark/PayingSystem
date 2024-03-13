@@ -8,52 +8,23 @@
 using namespace std;
 
 
-    std::ostream &operator<<(std::ostream &os, const Worker &obj)
-    {
-        cout<<endl;
-        os <<"Name: "<<obj.name<<endl;
-        os <<"Age: "<<obj.age<<endl;
-        os <<"Sex: "<<obj.sex<<endl;
-        os <<"Job title: "<<obj.title<<endl;
-        return os;
-    }
-
-    std::istream &operator>>(std::istream &is, Worker &obj)
-    {
-        cout<<"Enter the name: ";
-        getline(is, obj.name);
-        cout<<"Enter the age: ";
-        is >> obj.age;
-        cout << "Select the sex: \n 1.Male \n 2.Female \n 3.Other \n";
-        int select = 0;
-        is >> select;
-        switch (select)
-        {
-        case 1:
-            obj.sex = "Male";
-            break;
-        case 2:
-            obj.sex = "Female";
-            break;
-        case 3:
-            obj.sex = "Other";
-        default:
-            cout<<"Error!";
-            break;
-        }
-        cout<<"Enter the job title: ";
-        is >> obj.title;
-        return is;
-    }
 
 
 int BankSystem::numberOfSalaries = 0;
 
 int main()
 {
-    Worker mark;
-    cin >> mark;
-    cout << mark;
+
+    Company walmart;
+    cin >> walmart;
+    cout << walmart;
+
+
+
+
+//    Worker mark;
+//    cin >> mark;
+//    cout << mark;
 //    const BankSystem first(500.0);
 //    first.showNumberOfSalaries();
 //    {
@@ -79,6 +50,11 @@ int main()
 //    vova.showInformation();
     return 0;
 }
+
+
+
+
+
 
 
 

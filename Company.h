@@ -9,20 +9,20 @@ class Company
 {
 private:
     string nameOfTheCompany;
-    int amountOfWorkers;
-    double moneyFund;
+    int* amountOfWorkers;
+    double* moneyFund;
 public:
-    void showStatistic();
-    void newNameOfTheCompany();
-    void newAmountOfWorkers();
-    void newMoneyFund();
-    void changeStatistic();
-
+    friend std::istream &operator>>(std::istream &is, Company &obj);
+    friend std::ostream &operator<<(std::ostream &os, const Company &obj);
+    void showInfo();
     Company();
-    Company(string setNameOfTheCompany);
-    Company(string setNameOfTheCompany, int setAmountOfWorkers);
-    Company(string setNameOfTheCompany, int setAmountOfWorkers, double setMoneyFund);
+    Company(const string& newNameOfTheCompany);
+    Company(const string& newNameOfTheCompany, int newAmountOfWorkers);
+    Company(const string& newNameOfTheCompany, int newAmountOfWorkers, double newMoneyFund);
+
+    Company(const Company &obj);
     ~Company();
 };
+
 
 #endif // COMPANY_H
