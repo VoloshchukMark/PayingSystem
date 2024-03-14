@@ -15,9 +15,12 @@ int BankSystem::numberOfSalaries = 0;
 int main()
 {
 
-    Company walmart;
-    cin >> walmart;
-    cout << walmart;
+    Worker worker1;
+    cin >> worker1;
+    cout << worker1;
+//    Company walmart;
+//    cin >> walmart;
+//    cout << walmart;
 
 
 

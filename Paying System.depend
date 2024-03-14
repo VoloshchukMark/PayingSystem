@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 174 <<<<<<< Updated upstream
 
-1710082128 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
+1710430306 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
 	"Worker.h"
 	<iostream>
 	<string.h>
@@ -22,11 +22,11 @@
 
 1709571308 ated upstream
 
-1710354040 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
+1710430343 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
 	<iostream>
 	<string.h>
 
-1710355752 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
+1710429714 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
@@ -41,18 +41,24 @@
 
 1709887445 d:\study\programming\myprojects\payingsystem1\paying system\banksystem.h
 
-1710355090 source:d:\study\programming\myprojects\payingsystem1\paying system\company.cpp
+1710427530 source:d:\study\programming\myprojects\payingsystem1\paying system\company.cpp
 	"Company.h"
 	<iostream>
 	<string.h>
 
-1710355693 d:\study\programming\myprojects\payingsystem1\paying system\company.h
+1710428473 d:\study\programming\myprojects\payingsystem1\paying system\company.h
 	<iostream>
 	<string.h>
 
-1710355779 source:d:\study\programming\myprojects\payingsystem1\paying system\siae.cpp
+1710430279 source:d:\study\programming\myprojects\payingsystem1\paying system\siae.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
 	"Company.h"
+
+1710428459 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
+	"Employee.h"
+
+1710429673 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
+	"Worker.h"
 

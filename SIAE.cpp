@@ -10,7 +10,7 @@ using namespace std;
     std::ostream &operator<<(std::ostream &os, const Company &obj)
     {
         cout<<"============================================="<<endl;
-        cout<<"Name of the company is: "<<obj.nameOfTheCompany<<endl;
+        cout<<"Name of the company is: "<<obj.name<<endl;
         cout<<"Amount of workers is: "<<*obj.amountOfWorkers<<endl;
         cout<<"Money fund of the company is: "<<*obj.moneyFund<<" EUR."<<endl;
         cout<<"============================================="<<endl;
@@ -19,7 +19,7 @@ using namespace std;
     std::istream &operator>>(std::istream &is, Company &obj)       //insertion operator for Company class
     {
         cout<<"Enter name of the company: ";
-        getline(is, obj.nameOfTheCompany);
+        getline(is, obj.name);
         int newAmountOfWorkers;
         cout<<"Enter number of workers: ";
         is >> newAmountOfWorkers;
@@ -49,10 +49,21 @@ using namespace std;
 
     std::istream &operator>>(std::istream &is, Worker &obj)         //insertion operator for Worker class
     {
+        string newName;
         cout<<"Enter the name: ";
-        getline(is, obj.name);
-        cout<<"Enter the age: ";
-        is >> obj.age;
+        getline(is, newName);
+        if (newName.size() < 1)
+        {
+            cout<<"Name cannot be empty!\n";
+            newName.clear();
+        }else {obj.name = newName; newName.clear();}
+        int newAge = 0;
+        cout<<"Enter the age (18 or higher): ";
+        is >> newAge;
+        if (newAge < 18)
+        {
+            cout<<"We do not accept child labour!\n";
+        }else {obj.age = newAge;}
         cout << "Select the sex: \n 1.Male \n 2.Female \n 3.Other \n";
         int select = 0;
         is >> select;
@@ -70,8 +81,15 @@ using namespace std;
             cout<<"Error!";
             break;
         }
+        string newTitle;
         cout<<"Enter the job title: ";
-        is >> obj.title;
+        is >> newTitle;
+        if (newTitle.size() < 1)
+        {
+            cout<<"The name of the job title cannot be empty!\n";
+            newTitle.clear();
+        }else {obj.title = newTitle; newTitle.clear();}
+
         return is;
     }
 

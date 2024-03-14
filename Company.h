@@ -8,17 +8,21 @@ using namespace std;
 class Company
 {
 private:
-    string nameOfTheCompany;
+    string name;
     int* amountOfWorkers;
     double* moneyFund;
 public:
+
     friend std::istream &operator>>(std::istream &is, Company &obj);
     friend std::ostream &operator<<(std::ostream &os, const Company &obj);
-    void showInfo();
+
+
+
+
     Company();
-    Company(const string& newNameOfTheCompany);
-    Company(const string& newNameOfTheCompany, int newAmountOfWorkers);
-    Company(const string& newNameOfTheCompany, int newAmountOfWorkers, double newMoneyFund);
+    Company(const string& newName);
+    Company(const string& newName, int newAmountOfWorkers);
+    Company(const string& newName, int newAmountOfWorkers, double newMoneyFund);
 
     Company(const Company &obj);
     ~Company();

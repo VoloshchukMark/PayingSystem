@@ -14,20 +14,6 @@ private:
     string sex;
     string title;
 public:
-    void showInformation();
-    void changeName();
-    void changeNameM(string newName);
-    void changeAge();
-    void changeSex();
-    void changeTitle();
-    void switchTitle(const Worker &other);
-    void changeInformation()
-    {
-        changeName();
-        changeAge();
-        changeSex();
-        changeTitle();
-    }
 
     Worker();
     Worker(string newName);
