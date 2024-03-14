@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 174 <<<<<<< Updated upstream
 
-1710430544 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
+1710437240 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
 	"Worker.h"
 	<iostream>
 	<string.h>
@@ -22,16 +22,17 @@
 
 1709571308 ated upstream
 
-1710430521 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
+1710437227 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
 	<iostream>
 	<string.h>
 
-1710430879 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
+1710437357 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
 	"BankSystem.h"
 	"Company.h"
+	"Employee.h"
 
 1709833484 source:d:\study\programming\myprojects\payingsystem1\paying system\banksystem.cpp
 	"BankSystem.h"
@@ -56,11 +57,11 @@
 	"Worker.h"
 	"Company.h"
 
-1710434371 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
+1710437227 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
 	"Employee.h"
 	<iostream>
 	<string.h>
 
-1710434365 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
+1710436935 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
 	"Worker.h"
 

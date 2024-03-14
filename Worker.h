@@ -15,6 +15,12 @@ private:
     string title;
 public:
 
+    string getName();
+    int getAge();
+    string getSex();
+    string getTitle();
+
+
     Worker();
     Worker(string newName);
     Worker(Worker &&other);

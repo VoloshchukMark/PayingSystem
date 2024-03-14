@@ -20,6 +20,9 @@ int main()
 //    cin >> walmart;
 //    cout << walmart;
     Employee mark;
+    mark.displayInformation();
+    Employee vova("Volodymyr", 18, "Male", "Slave", 500.0, 20.0);
+    vova.displayInformation();
 
 
 

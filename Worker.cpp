@@ -4,7 +4,23 @@
 
 using namespace std;
 
+    string Worker::getName()
+    {
+        return name;
+    }
 
+    int Worker::getAge()
+    {
+        return age;
+    }
+    string Worker::getSex()
+    {
+        return sex;
+    }
+    string Worker::getTitle()
+    {
+        return title;
+    }
 
 
 Worker::Worker()

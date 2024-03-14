@@ -11,6 +11,7 @@ private:
     double workingTime;
 public:
 
+    void displayInformation();
 
     Employee();
     Employee(string newName);
