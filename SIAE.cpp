@@ -7,7 +7,7 @@
 
 using namespace std;
 
-    std::ostream &operator<<(std::ostream &os, const Company &obj)
+    std::ostream &operator<<(std::ostream &os, const Company &obj)      //extraction operator for Company class
     {
         cout<<"============================================="<<endl;
         cout<<"Name of the company is: "<<obj.name<<endl;
@@ -39,11 +39,13 @@ using namespace std;
 
     std::ostream &operator<<(std::ostream &os, const Worker &obj)  //extraction operator for Worker class
     {
+        cout<<"============================================="<<endl;
         cout<<endl;
         os <<"Name: "<<obj.name<<endl;
         os <<"Age: "<<obj.age<<endl;
         os <<"Sex: "<<obj.sex<<endl;
         os <<"Job title: "<<obj.title<<endl;
+        cout<<"============================================="<<endl;
         return os;
     }
 
@@ -78,7 +80,7 @@ using namespace std;
         case 3:
             obj.sex = "Other";
         default:
-            cout<<"Error!";
+            cout<<"Error!\n";
             break;
         }
         string newTitle;

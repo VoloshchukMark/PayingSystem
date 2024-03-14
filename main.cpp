@@ -3,6 +3,7 @@
 #include "Worker.h"
 #include "BankSystem.h"
 #include "Company.h"
+#include "Employee.h"
 
 
 using namespace std;
@@ -15,13 +16,10 @@ int BankSystem::numberOfSalaries = 0;
 int main()
 {
 
-    Worker worker1;
-    cin >> worker1;
-    cout << worker1;
 //    Company walmart;
 //    cin >> walmart;
 //    cout << walmart;
-
+    Employee mark;
 
 
 
