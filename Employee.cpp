@@ -29,4 +29,4 @@ Employee::Employee(string newName, int newAge, string newSex, string newTitle)
 Employee::Employee(string newName, int newAge, string newSex, string newTitle, double newSalary)
     :Employee(newName, newAge, newSex, newTitle, newSalary, 0.0) {}
 Employee::Employee(string newName, int newAge, string newSex, string newTitle, double newSalary, double newWorkingTime)
-    :Worker(newName, newAge, newSex, newTitle),salary{newSalary}, workingTime{newWorkingTime} {}
+    :Worker(newName, newAge, newSex, newTitle), salary{newSalary}, workingTime{newWorkingTime} {}
