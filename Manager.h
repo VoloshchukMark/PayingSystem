@@ -7,11 +7,13 @@
 class Manager : public Worker
 {
     public:
+
+
         Manager();
-
-    protected:
-
-    private:
+        Manager(string newName);
+        Manager(string newName, int newAge);
+        Manager(string newName, int newAge, string newSex);
+        ~Manager() {}
 };
 
 #endif // MANAGER_H

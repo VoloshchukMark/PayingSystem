@@ -26,7 +26,7 @@
 	<iostream>
 	<string.h>
 
-1710437357 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
+1710489427 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
@@ -63,5 +63,13 @@
 	<string.h>
 
 1710436935 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
+	"Worker.h"
+
+1710489980 source:d:\study\programming\myprojects\payingsystem1\paying system\manager.cpp
+	"Manager.h"
+	<iostream>
+	<string.h>
+
+1710490085 d:\study\programming\myprojects\payingsystem1\paying system\manager.h
 	"Worker.h"
 
