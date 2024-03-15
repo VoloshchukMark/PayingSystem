@@ -16,6 +16,15 @@ void Employee::displayInformation()
     cout<<"============================================="<<endl;
 }
 
+    void Employee::setTask(string newTask)
+    {
+        this->task = newTask;
+    }
+    void Employee::displayTask()
+    {
+        cout<<"Task of "<<this->getName()<<" is: "<<task<<endl;
+    }
+
 Employee::Employee()
     :Employee("Unknown", 0, "Unknown", "None", 0.0, 0.0) {}
 Employee::Employee(string newName)
@@ -29,4 +38,4 @@ Employee::Employee(string newName, int newAge, string newSex, string newTitle)
 Employee::Employee(string newName, int newAge, string newSex, string newTitle, double newSalary)
     :Employee(newName, newAge, newSex, newTitle, newSalary, 0.0) {}
 Employee::Employee(string newName, int newAge, string newSex, string newTitle, double newSalary, double newWorkingTime)
-    :Worker(newName, newAge, newSex, newTitle), salary{newSalary}, workingTime{newWorkingTime} {}
+    :Worker(newName, newAge, newSex, newTitle), salary{newSalary}, workingTime{newWorkingTime}, task{"None"}{}

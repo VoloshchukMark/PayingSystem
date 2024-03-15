@@ -2,12 +2,14 @@
 #define MANAGER_H
 
 #include "Worker.h"
+#include "Employee.h"
 
 
 class Manager : public Worker
 {
     public:
 
+    void giveTask(Employee &other, const string &newTask);
 
         Manager();
         Manager(string newName);

@@ -2,6 +2,14 @@
 #include <iostream>
 #include <string.h>
 
+void Manager::giveTask(Employee &other, const string &newTask)
+{
+    other.setTask(newTask);
+}
+
+
+
+
 Manager::Manager()
     :Worker("None", 0, "Unknown") {}
 Manager::Manager(string newName)

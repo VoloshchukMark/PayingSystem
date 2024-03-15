@@ -9,9 +9,12 @@ class Employee : public Worker
 private:
     double salary;
     double workingTime;
+    string task;
 public:
 
     void displayInformation();
+    void setTask(string newTask);
+    void displayTask();
 
     Employee();
     Employee(string newName);

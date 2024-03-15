@@ -26,13 +26,14 @@
 	<iostream>
 	<string.h>
 
-1710489427 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
+1710491976 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
 	"BankSystem.h"
 	"Company.h"
 	"Employee.h"
+	"Manager.h"
 
 1709833484 source:d:\study\programming\myprojects\payingsystem1\paying system\banksystem.cpp
 	"BankSystem.h"
@@ -57,19 +58,20 @@
 	"Worker.h"
 	"Company.h"
 
-1710489321 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
+1710491959 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
 	"Employee.h"
 	<iostream>
 	<string.h>
 
-1710436935 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
+1710491927 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
 	"Worker.h"
 
-1710489980 source:d:\study\programming\myprojects\payingsystem1\paying system\manager.cpp
+1710491798 source:d:\study\programming\myprojects\payingsystem1\paying system\manager.cpp
 	"Manager.h"
 	<iostream>
 	<string.h>
 
-1710490085 d:\study\programming\myprojects\payingsystem1\paying system\manager.h
+1710491504 d:\study\programming\myprojects\payingsystem1\paying system\manager.h
 	"Worker.h"
+	"Employee.h"
 
