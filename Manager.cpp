@@ -7,6 +7,16 @@ void Manager::giveTask(Employee &other, const string &newTask)
     other.setTask(newTask);
 }
 
+void Manager::displayInformation()
+{
+    cout<<"============================================="<<endl;
+    cout<<"Name: "<<this->getName()<<endl;
+    cout<<"Age: "<<this->getAge()<<endl;
+    cout<<"Sex: "<<this->getSex()<<endl;
+    cout<<"============================================="<<endl;
+}
+
+
 
 
 

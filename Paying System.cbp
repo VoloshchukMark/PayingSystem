@@ -40,6 +40,8 @@
 		<Unit filename="Company.h" />
 		<Unit filename="Employee.cpp" />
 		<Unit filename="Employee.h" />
+		<Unit filename="Manager.cpp" />
+		<Unit filename="Manager.h" />
 		<Unit filename="SIAE.cpp" />
 		<Unit filename="Worker.cpp" />
 		<Unit filename="Worker.h" />

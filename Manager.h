@@ -10,6 +10,7 @@ class Manager : public Worker
     public:
 
     void giveTask(Employee &other, const string &newTask);
+    void displayInformation();
 
         Manager();
         Manager(string newName);

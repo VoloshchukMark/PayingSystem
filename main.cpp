@@ -17,10 +17,13 @@ int BankSystem::numberOfSalaries = 0;
 int main()
 {
 
-    Manager mark;
-    Employee vova;
-    mark.giveTask(vova, "Run around in cirles for 2 hours");
-    vova.displayTask();
+
+
+
+//    Manager mark;
+//    Employee vova("Vova", 18, "Male", "Worker");
+//    mark.giveTask(vova, "Run around in cirles for 2 hours");
+//    vova.displayTask();
 
 //    Employee mark;
 //    mark.displayInformation();
