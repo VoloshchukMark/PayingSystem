@@ -7,7 +7,18 @@
 
 class Department : public Company
 {
-    Manager manager;
+public:
+    Manager manager1;
+    void setManager(Manager &other);
+    void displayManager()
+    {
+        cout<<"Manager of the current department is: "<<this->manager1.getName()<<endl;;
+    }
+
+    Department();
+    Department(const string& newName);
+    Department(const string& newName, int newAmountOfWorkers);
+    Department(const string& newName, int newAmountOfWorkers, double newMoneyFund);
 };
 
 #endif // DEPARTMENT_H

@@ -20,6 +20,17 @@ public:
     string getSex();
     string getTitle();
 
+    Worker& operator =(const Worker &other)
+    {
+        if(this != &other)
+        {
+            name.assign(other.name);
+            age = other.age;
+            sex.assign(other.sex);
+            title.assign(other.title);
+        }
+        return *this;
+    }
 
     Worker();
     Worker(string newName);

@@ -12,6 +12,15 @@ class Manager : public Worker
     void giveTask(Employee &other, const string &newTask);
     void displayInformation();
 
+    Manager& operator =(const Manager &other)
+    {
+        if(this != &other)
+        {
+            Worker::operator=(other);
+        }
+        return *this;
+    }
+
         Manager();
         Manager(string newName);
         Manager(string newName, int newAge);

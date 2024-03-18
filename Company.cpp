@@ -16,7 +16,7 @@ Company::Company(const string& newName, int newAmountOfWorkers)
     :Company(newName, newAmountOfWorkers, 0.0) {}
 Company::Company(const string& newName, int newAmountOfWorkers, double newMoneyFund)
     {
-        name = newName;
+        name.assign(newName);
         amountOfWorkers = new int(newAmountOfWorkers);
         moneyFund = new double(newMoneyFund);
     }

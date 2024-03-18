@@ -40,7 +40,6 @@ using namespace std;
     std::ostream &operator<<(std::ostream &os, const Worker &obj)  //extraction operator for Worker class
     {
         cout<<"============================================="<<endl;
-        cout<<endl;
         os <<"Name: "<<obj.name<<endl;
         os <<"Age: "<<obj.age<<endl;
         os <<"Sex: "<<obj.sex<<endl;
