@@ -16,6 +16,9 @@ public:
     friend std::istream &operator>>(std::istream &is, Company &obj);
     friend std::ostream &operator<<(std::ostream &os, const Company &obj);
 
+    string getName();
+    int* getAmountOfWorkers();
+    double* getMoneyFund();
 
 
 

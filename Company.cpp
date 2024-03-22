@@ -5,6 +5,18 @@
 using namespace std;
 
 
+    string Company::getName()
+    {
+        return name;
+    }
+    int* Company::getAmountOfWorkers()
+    {
+        return amountOfWorkers;
+    }
+    double* Company::getMoneyFund()
+    {
+        return moneyFund;
+    }
 
 
 
