@@ -25,6 +25,25 @@ void Employee::displayInformation()
         cout<<"Task of "<<this->getName()<<" is: "<<task<<endl;
     }
 
+
+    void Employee::displayName()
+    {
+        cout<<"Name: "<<this->getName()<<endl;
+    }
+    void Employee::displayAge()
+    {
+        cout<<"Age: "<<this->getAge()<<endl;
+    }
+    void Employee::displaySex()
+    {
+        cout<<"Sex: "<<this->getSex()<<endl;
+    }
+    void Employee::displayTitle()
+    {
+        cout<<"Job title: "<<this->getTitle()<<endl;
+    }
+
+
 Employee::Employee()
     :Employee("Unknown", 0, "Unknown", "None", 0.0, 0.0) {}
 Employee::Employee(string newName)

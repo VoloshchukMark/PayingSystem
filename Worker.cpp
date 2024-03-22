@@ -22,7 +22,22 @@ using namespace std;
         return title;
     }
 
-
+    void Worker::displayName()
+    {
+        cout<<"Name: "<<name<<endl;
+    }
+    void Worker::displayAge()
+    {
+        cout<<"Age: "<<age<<endl;
+    }
+    void Worker::displaySex()
+    {
+        cout<<"Sex: "<<sex<<endl;
+    }
+    void Worker::displayTitle()
+    {
+        cout<<"Job title: "<<title<<endl;
+    }
 
 Worker::Worker()
         :Worker("None", 0, "None", "None") {}

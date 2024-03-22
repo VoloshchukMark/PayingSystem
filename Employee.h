@@ -16,6 +16,11 @@ public:
     void setTask(string newTask);
     void displayTask();
 
+    virtual void displayName() override;
+    virtual void displayAge() override;
+    virtual void displaySex() override;
+    virtual void displayTitle() override;
+
     Employee();
     Employee(string newName);
     Employee(string newName, int newAge);
@@ -23,6 +28,7 @@ public:
     Employee(string newName, int newAge, string newSex, string newTitle);
     Employee(string newName, int newAge, string newSex, string newTitle, double newSalary);
     Employee(string newName, int newAge, string newSex, string newTitle, double newSalary, double newWorkingTime);
+    ~Employee() {}
 };
 
 #endif // EMPLOYEE_H

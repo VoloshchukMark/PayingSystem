@@ -17,11 +17,22 @@ void Manager::displayInformation()
 }
 
 
-
+    void Manager::displayName()
+    {
+        cout<<"Name: "<<this->getName()<<endl;
+    }
+    void Manager::displayAge()
+    {
+        cout<<"Age: "<<this->getAge()<<endl;
+    }
+    void Manager::displaySex()
+    {
+        cout<<"Sex: "<<this->getSex()<<endl;
+    }
 
 
 Manager::Manager()
-    :Worker("None", 0, "Unknown") {}
+    :Worker("Non", 0, "Unknown") {}
 Manager::Manager(string newName)
     :Worker(newName, 0, "Unknown") {}
 Manager::Manager(string newName, int newAge)

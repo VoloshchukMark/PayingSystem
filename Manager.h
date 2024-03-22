@@ -21,6 +21,10 @@ class Manager : public Worker
         return *this;
     }
 
+    virtual void displayName() override;
+    virtual void displayAge() override;
+    virtual void displaySex() override;
+
         Manager();
         Manager(string newName);
         Manager(string newName, int newAge);

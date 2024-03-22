@@ -20,6 +20,11 @@ public:
     string getSex();
     string getTitle();
 
+    virtual void displayName();
+    virtual void displayAge();
+    virtual void displaySex();
+    virtual void displayTitle();
+
     Worker& operator =(const Worker &other)
     {
         if(this != &other)

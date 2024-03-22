@@ -19,6 +19,6 @@ public:
     Department(const string& newName);
     Department(const string& newName, int newAmountOfWorkers);
     Department(const string& newName, int newAmountOfWorkers, double newMoneyFund);
+    ~Department() {}
 };
-
 #endif // DEPARTMENT_H

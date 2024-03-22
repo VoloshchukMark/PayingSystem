@@ -38,6 +38,8 @@
 		<Unit filename="BankSystem.h" />
 		<Unit filename="Company.cpp" />
 		<Unit filename="Company.h" />
+		<Unit filename="Department.cpp" />
+		<Unit filename="Department.h" />
 		<Unit filename="Employee.cpp" />
 		<Unit filename="Employee.h" />
 		<Unit filename="Manager.cpp" />
