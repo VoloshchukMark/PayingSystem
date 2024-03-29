@@ -55,6 +55,8 @@ void Employee::displayInformation()
         }
 
 
+
+
 Employee::Employee()
     :Employee("Unknown", 0, "Unknown", "None", 0.0, 0.0) {}
 Employee::Employee(string newName)

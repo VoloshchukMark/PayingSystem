@@ -23,6 +23,17 @@ public:
 
     Employee(const Employee &obj);
     Employee(Employee &&obj);
+    Employee &operator=(const Employee &obj)
+    {
+        if (this != &obj)
+        {
+            Worker::operator=(obj);
+            salary = obj.salary;
+            workingTime = obj.workingTime;
+            task = obj.task;
+        }
+        return *this;
+    }
 
     Employee();
     Employee(string newName);

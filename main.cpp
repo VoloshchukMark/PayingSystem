@@ -17,9 +17,6 @@ int BankSystem::numberOfSalaries = 0;
 
 int main()
 {
-    Employee mark("Mark Voloshchuk", 18, "Male", "Slaveowner", 200, 20.6);
-    Employee vova(move(mark));
-    vova.displayInformation();
 
 
 //Manager serhiy("Serhiy", 18, "Male");
