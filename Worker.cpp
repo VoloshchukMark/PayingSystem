@@ -22,6 +22,7 @@ using namespace std;
         return title;
     }
 
+
     void Worker::displayName()
     {
         cout<<"Name: "<<name<<endl;
@@ -38,6 +39,10 @@ using namespace std;
     {
         cout<<"Job title: "<<title<<endl;
     }
+
+    Worker::Worker(const Worker &obj)
+        :name{obj.name}, age{obj.age}, sex{obj.sex}, title{obj.title} {}
+
 
 Worker::Worker()
         :Worker("None", 0, "None", "None") {}

@@ -21,6 +21,9 @@ public:
     virtual void displaySex() override;
     virtual void displayTitle() override;
 
+    Employee(const Employee &obj);
+    Employee(Employee &&obj);
+
     Employee();
     Employee(string newName);
     Employee(string newName, int newAge);

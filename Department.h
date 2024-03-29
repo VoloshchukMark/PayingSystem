@@ -8,17 +8,18 @@
 class Department : public Company
 {
 public:
-    Manager manager1;
-    void setManager(Manager &other);
+    Manager* manager1;
+    void setManager(Manager &&other);
     void displayManager()
     {
-        cout<<"Manager of the current department is: "<<this->manager1.getName()<<endl;;
+        cout<<"Manager of the current department is: "<<this->manager1->getName()<<endl;;
     }
 
     Department();
     Department(const string& newName);
     Department(const string& newName, int newAmountOfWorkers);
     Department(const string& newName, int newAmountOfWorkers, double newMoneyFund);
-    ~Department() {}
+    virtual ~Department() {
+        delete manager1;}
 };
 #endif // DEPARTMENT_H

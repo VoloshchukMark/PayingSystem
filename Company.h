@@ -20,6 +20,9 @@ public:
     int* getAmountOfWorkers();
     double* getMoneyFund();
 
+    virtual void displayName();
+    virtual void displayAmountOfWorkers();
+    virtual void displayMoneyFund();
 
 
     Company();
@@ -28,7 +31,7 @@ public:
     Company(const string& newName, int newAmountOfWorkers, double newMoneyFund);
 
     Company(const Company &obj);
-    ~Company();
+    virtual ~Company();
 };
 
 

@@ -37,6 +37,8 @@ public:
         return *this;
     }
 
+    Worker(const Worker &obj);
+
     Worker();
     Worker(string newName);
     Worker(Worker &&other);

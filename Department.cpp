@@ -1,8 +1,8 @@
 #include "Department.h"
 
-    void Department::setManager(Manager &other)
+    void Department::setManager(Manager &&other)
     {
-        manager1.operator=(other);
+        manager1->operator=(other);
     }
 
 Department::Department()

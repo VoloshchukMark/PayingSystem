@@ -32,7 +32,7 @@ void Manager::displayInformation()
 
 
 Manager::Manager()
-    :Worker("Non", 0, "Unknown") {}
+    :Worker("None", 0, "Unknown") {}
 Manager::Manager(string newName)
     :Worker(newName, 0, "Unknown") {}
 Manager::Manager(string newName, int newAge)

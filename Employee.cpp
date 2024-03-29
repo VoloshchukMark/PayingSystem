@@ -44,6 +44,17 @@ void Employee::displayInformation()
     }
 
 
+    Employee::Employee(const Employee &obj)
+        :Worker(obj), salary{obj.salary}, workingTime{obj.workingTime}, task{obj.task} {}
+    Employee::Employee(Employee &&obj)
+        :Worker(move(obj)), salary{obj.salary}, workingTime{obj.workingTime}, task{obj.task}
+        {
+            obj.salary = 0;
+            obj.workingTime = 0;
+            obj.task.clear();
+        }
+
+
 Employee::Employee()
     :Employee("Unknown", 0, "Unknown", "None", 0.0, 0.0) {}
 Employee::Employee(string newName)

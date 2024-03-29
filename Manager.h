@@ -29,7 +29,7 @@ class Manager : public Worker
         Manager(string newName);
         Manager(string newName, int newAge);
         Manager(string newName, int newAge, string newSex);
-        ~Manager() {}
+        virtual ~Manager() {}
 };
 
 #endif // MANAGER_H

@@ -19,6 +19,18 @@ using namespace std;
     }
 
 
+    void Company::displayName()
+    {
+        cout<<"Name: "<<this->getName()<<endl;
+    }
+    void Company::displayAmountOfWorkers()
+    {
+        cout<<"Amount of workers: "<<this->getAmountOfWorkers()<<endl;
+    }
+    void Company::displayMoneyFund()
+    {
+        cout<<"Money fund: "<<this->getMoneyFund()<<endl;
+    }
 
 Company::Company()
     :Company("None", 0, 0.0) {}

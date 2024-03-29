@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 174 <<<<<<< Updated upstream
 
-1711094449 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
+1711700039 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
 	"Worker.h"
 	<iostream>
 	<string.h>
@@ -22,11 +22,11 @@
 
 1709571308 ated upstream
 
-1711094397 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
+1711700039 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
 	<iostream>
 	<string.h>
 
-1711095318 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
+1711701287 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
@@ -44,42 +44,42 @@
 
 1709887445 d:\study\programming\myprojects\payingsystem1\paying system\banksystem.h
 
-1711095689 source:d:\study\programming\myprojects\payingsystem1\paying system\company.cpp
+1711470112 source:d:\study\programming\myprojects\payingsystem1\paying system\company.cpp
 	"Company.h"
 	<iostream>
 	<string.h>
 
-1711095869 d:\study\programming\myprojects\payingsystem1\paying system\company.h
+1711470795 d:\study\programming\myprojects\payingsystem1\paying system\company.h
 	<iostream>
 	<string.h>
 
-1710782641 source:d:\study\programming\myprojects\payingsystem1\paying system\siae.cpp
+1711095873 source:d:\study\programming\myprojects\payingsystem1\paying system\siae.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
 	"Company.h"
 
-1711094957 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
+1711701155 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
 	"Employee.h"
 	<iostream>
 	<string.h>
 
-1711094841 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
+1711701021 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
 	"Worker.h"
 
-1711095267 source:d:\study\programming\myprojects\payingsystem1\paying system\manager.cpp
+1711096293 source:d:\study\programming\myprojects\payingsystem1\paying system\manager.cpp
 	"Manager.h"
 	<iostream>
 	<string.h>
 
-1711095232 d:\study\programming\myprojects\payingsystem1\paying system\manager.h
+1711700130 d:\study\programming\myprojects\payingsystem1\paying system\manager.h
 	"Worker.h"
 	"Employee.h"
 
-1710783483 source:d:\study\programming\myprojects\payingsystem1\paying system\department.cpp
+1711470729 source:d:\study\programming\myprojects\payingsystem1\paying system\department.cpp
 	"Department.h"
 
-1710866367 d:\study\programming\myprojects\payingsystem1\paying system\department.h
+1711700142 d:\study\programming\myprojects\payingsystem1\paying system\department.h
 	"Company.h"
 	"Manager.h"
 
