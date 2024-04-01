@@ -3,6 +3,7 @@
 
 #include "Worker.h"
 #include "Employee.h"
+#include "Display.h"
 
 
 class Manager : public Worker
@@ -29,7 +30,7 @@ class Manager : public Worker
         Manager(string newName);
         Manager(string newName, int newAge);
         Manager(string newName, int newAge, string newSex);
-        virtual ~Manager() {}
+        virtual ~Manager() override {}
 };
 
 #endif // MANAGER_H

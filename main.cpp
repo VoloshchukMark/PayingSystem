@@ -18,6 +18,10 @@ int BankSystem::numberOfSalaries = 0;
 int main()
 {
 
+    Manager manager2("Joba");
+    manager2.displayName();
+    Employee employee1("Puba");
+    employee1.displayName();
 
 //Manager serhiy("Serhiy", 18, "Male");
 //Department infotech("Name", 20, 99.9);

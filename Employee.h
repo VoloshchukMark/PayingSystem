@@ -2,6 +2,7 @@
 #define EMPLOYEE_H
 
 #include "Worker.h"
+#include "Display.h"
 
 
 class Employee : public Worker
@@ -42,7 +43,7 @@ public:
     Employee(string newName, int newAge, string newSex, string newTitle);
     Employee(string newName, int newAge, string newSex, string newTitle, double newSalary);
     Employee(string newName, int newAge, string newSex, string newTitle, double newSalary, double newWorkingTime);
-    ~Employee() {}
+    virtual ~Employee() override{}
 };
 
 #endif // EMPLOYEE_H

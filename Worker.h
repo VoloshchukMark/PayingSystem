@@ -2,11 +2,12 @@
 #define WORKER_H
 #include <iostream>
 #include <string.h>
+#include "Display.h"
 
 using namespace std;
 
 
-class Worker
+class Worker: public Display
 {
 private:
     string name;
@@ -20,10 +21,10 @@ public:
     string getSex();
     string getTitle();
 
-    virtual void displayName();
-    virtual void displayAge();
-    virtual void displaySex();
-    virtual void displayTitle();
+    virtual void displayName() override;
+    virtual void displayAge()override;
+    virtual void displaySex()override;
+    virtual void displayTitle()override;
 
     Worker& operator =(const Worker &other)
     {
@@ -45,7 +46,7 @@ public:
     Worker(string newName, int newAge);
     Worker(string newName, int newAge, string newSex);
     Worker(string newName, int newAge, string newSex, string newTitle);
-    ~Worker();
+    virtual ~Worker();
     friend std::ostream &operator<<(std::ostream &os, const Worker &obj);
     friend std::istream &operator>>(std::istream &is, Worker &obj);
 };
