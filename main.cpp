@@ -17,15 +17,16 @@ int BankSystem::numberOfSalaries = 0;
 
 int main()
 {
-    Company ikea("Ikea", 3, 399.9);
-    ikea.displayMoneyFund();
-    Department furniture("Department of furniture crafting", 2, 170.0);
-    Company& furniture1 = furniture;
-    furniture1.displayMoneyFund();
-    ikea.univChangeMoneyFund(ikea, 500.0);
-    ikea.displayMoneyFund();
-    furniture1.univChangeMoneyFund(furniture1, 300.0);
-    furniture1.displayMoneyFund();
+//    Company ikea("Ikea", 3, 399.9);
+//    ikea.displayMoneyFund();
+//    Department furniture("Department of furniture crafting", 2, 170.0);
+//    Company& furniture1 = furniture;
+//    furniture1.displayMoneyFund();
+//    ikea.univChangeMoneyFund(ikea, 500.0);
+//    ikea.displayMoneyFund();
+//    furniture1.univChangeMoneyFund(furniture1, 300.0);
+//    furniture1.displayMoneyFund();
+
 
 //    Manager manager2("Joba");
 //    manager2.displayName();
