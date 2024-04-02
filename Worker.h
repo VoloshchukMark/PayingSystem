@@ -21,6 +21,11 @@ public:
     string getSex();
     string getTitle();
 
+    void changeName(string newName);
+    void changeAge(int newAge);
+    void changeSex(string newSex);
+    void changeTitle(string newTitle);
+
     virtual void displayName() override;
     virtual void displayAge()override;
     virtual void displaySex()override;

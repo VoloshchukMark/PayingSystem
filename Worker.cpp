@@ -22,6 +22,27 @@ using namespace std;
         return title;
     }
 
+    void Worker::changeName(string newName)
+    {
+        name = newName;
+        cout<<"Name changed successfuly"<<endl;
+    }
+    void Worker::changeAge(int newAge)
+    {
+        age = newAge;
+        cout<<"Age changed successfuly"<<endl;
+    }
+    void Worker::changeSex(string newSex)
+    {
+        sex = newSex;
+        cout<<"Sex changed successfuly"<<endl;
+    }
+    void Worker::changeTitle(string newTitle)
+    {
+        title = newTitle;
+        cout<<"Title changed successfuly"<<endl;
+    }
+
 
     void Worker::displayName()
     {

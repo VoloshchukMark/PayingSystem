@@ -15,6 +15,8 @@ public:
         cout<<"Manager of the current department is: "<<this->manager1->getName()<<endl;;
     }
 
+    Department(const Department &obj);
+
     Department();
     Department(const string& newName);
     Department(const string& newName, int newAmountOfWorkers);

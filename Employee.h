@@ -17,6 +17,7 @@ public:
     void setTask(string newTask);
     void displayTask();
 
+
     virtual void displayName() override;
     virtual void displayAge() override;
     virtual void displaySex() override;

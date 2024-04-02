@@ -25,11 +25,11 @@ using namespace std;
     }
     void Company::displayAmountOfWorkers()
     {
-        cout<<"Amount of workers: "<<this->getAmountOfWorkers()<<endl;
+        cout<<"Amount of workers: "<<*this->getAmountOfWorkers()<<endl;
     }
     void Company::displayMoneyFund()
     {
-        cout<<"Money fund: "<<this->getMoneyFund()<<endl;
+        cout<<"Money fund: "<<*this->getMoneyFund()<<endl;
     }
 
 Company::Company()

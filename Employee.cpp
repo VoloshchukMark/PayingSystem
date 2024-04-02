@@ -26,6 +26,8 @@ void Employee::displayInformation()
     }
 
 
+
+
     void Employee::displayName()
     {
         cout<<"Name: "<<this->getName()<<endl;

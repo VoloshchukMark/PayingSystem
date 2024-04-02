@@ -24,6 +24,15 @@ public:
     virtual void displayAmountOfWorkers();
     virtual void displayMoneyFund();
 
+    void changeMoneyFund(double amount)
+    {
+        *this->moneyFund = amount;
+    }
+
+    void univChangeMoneyFund(Company &obj, double amount)
+    {
+        obj.changeMoneyFund(amount);
+    }
 
     Company();
     Company(const string& newName);

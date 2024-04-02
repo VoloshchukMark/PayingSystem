@@ -1,9 +1,13 @@
 #include "Department.h"
+#include "Company.h"
 
     void Department::setManager(Manager &&other)
     {
         manager1->operator=(other);
     }
+
+    Department::Department(const Department &obj)
+        :Company(obj), manager1{obj.manager1} {}
 
 Department::Department()
     :Company("None", 0, 0.0) {}
