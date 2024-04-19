@@ -8,20 +8,30 @@
 class Employee : public Worker
 {
 private:
-    double salary;
     double workingTime;
+    double hourlyRate;
     string task;
+    double salary;
+
 public:
-
-    void displayInformation();
     void setTask(string newTask);
-    void displayTask();
+    void setSalary(double calculatedSalary);
+    void setID(int newId);
 
+    double getWorkingTime();
+    double getHourlyRate();
+    double getSalary();
+    int getID();
 
     virtual void displayName() override;
     virtual void displayAge() override;
     virtual void displaySex() override;
     virtual void displayTitle() override;
+    void displayInformation();
+    void displayTask();
+    void displaySalary();
+
+//    void copyClass(const Employee &obj)
 
     Employee(const Employee &obj);
     Employee(Employee &&obj);
@@ -42,8 +52,11 @@ public:
     Employee(string newName, int newAge);
     Employee(string newName, int newAge, string newSex);
     Employee(string newName, int newAge, string newSex, string newTitle);
-    Employee(string newName, int newAge, string newSex, string newTitle, double newSalary);
-    Employee(string newName, int newAge, string newSex, string newTitle, double newSalary, double newWorkingTime);
+    Employee(string newName, int newAge, string newSex, string newTitle, double newWorkingTime);
+    Employee(string newName, int newAge, string newSex, string newTitle, double newId, double newWorkingTime, double newHourlyRate, string newTask, double newSalary);
+
+    friend std::ostream &operator<<(std::ostream &os, const Employee &obi);
+
     virtual ~Employee() override{}
 };
 

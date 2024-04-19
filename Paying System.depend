@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 174 <<<<<<< Updated upstream
 
-1712041766 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
+1713456979 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
 	"Worker.h"
 	<iostream>
 	<string.h>
@@ -22,20 +22,23 @@
 
 1709571308 ated upstream
 
-1712041759 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
+1713456979 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
 	<iostream>
 	<string.h>
 	"Display.h"
 
-1712044360 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
-	<iostream>
+1713449601 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
 	<string.h>
+	<vector>
 	"Worker.h"
 	"BankSystem.h"
 	"Company.h"
 	"Employee.h"
 	"Manager.h"
 	"Department.h"
+	"Accountant.h"
+	"Interface.h"
+	<ctime>
 
 1709837084 source:d:\study\programming\myprojects\payingsystem1\paying system\banksystem.cpp
 	"BankSystem.h"
@@ -54,18 +57,19 @@
 	<iostream>
 	<string.h>
 
-1711975351 source:d:\study\programming\myprojects\payingsystem1\paying system\siae.cpp
+1713509965 source:d:\study\programming\myprojects\payingsystem1\paying system\siae.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
 	"Company.h"
+	"Employee.h"
 
-1712041715 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
+1713457047 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
 	"Employee.h"
 	<iostream>
 	<string.h>
 
-1712041715 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
+1713511783 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
 	"Worker.h"
 	"Display.h"
 
@@ -91,4 +95,27 @@
 	"Display.h"
 
 1711975142 d:\study\programming\myprojects\payingsystem1\paying system\display.h
+
+1713272213 source:d:\study\programming\myprojects\payingsystem1\paying system\accountant.cpp
+	"Accountant.h"
+	"Employee.h"
+	<iostream>
+	<string.h>
+
+1713272183 d:\study\programming\myprojects\payingsystem1\paying system\accountant.h
+	"Employee.h"
+
+1713512390 source:d:\study\programming\myprojects\payingsystem1\paying system\interface.cpp
+	"Interface.h"
+	<iostream>
+	<fstream>
+	<string.h>
+	<ctime>
+	<vector>
+	"Employee.h"
+	<typeinfo>
+
+1713512309 d:\study\programming\myprojects\payingsystem1\paying system\interface.h
+	"Employee.h"
+	<vector>
 

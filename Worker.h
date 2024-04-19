@@ -14,12 +14,16 @@ private:
     int age;
     string sex;
     string title;
+    int id;
+
 public:
+    void setId(int newId);
 
     string getName();
     int getAge();
     string getSex();
     string getTitle();
+    int getId();
 
     void changeName(string newName);
     void changeAge(int newAge);
@@ -50,7 +54,7 @@ public:
     Worker(Worker &&other);
     Worker(string newName, int newAge);
     Worker(string newName, int newAge, string newSex);
-    Worker(string newName, int newAge, string newSex, string newTitle);
+    Worker(string newName, int newAge, string newSex, string newTitle, double newId);
     virtual ~Worker();
     friend std::ostream &operator<<(std::ostream &os, const Worker &obj);
     friend std::istream &operator>>(std::istream &is, Worker &obj);

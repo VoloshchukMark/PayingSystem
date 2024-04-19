@@ -4,11 +4,18 @@
 
 using namespace std;
 
+
+    void Worker::setId(int newId)
+    {
+        this->id = newId;
+    }
+
+
+
     string Worker::getName()
     {
         return name;
     }
-
     int Worker::getAge()
     {
         return age;
@@ -21,6 +28,12 @@ using namespace std;
     {
         return title;
     }
+    Worker::getId()
+    {
+        return id;
+    }
+
+
 
     void Worker::changeName(string newName)
     {
@@ -62,25 +75,27 @@ using namespace std;
     }
 
     Worker::Worker(const Worker &obj)
-        :name{obj.name}, age{obj.age}, sex{obj.sex}, title{obj.title} {}
+        :name{obj.name}, age{obj.age}, sex{obj.sex}, title{obj.title}, id{obj.id} {}
 
 
-Worker::Worker()
-        :Worker("None", 0, "None", "None") {}
-    Worker::Worker(string newName)
-        :Worker(newName, 0, "None", "None") {}
-    Worker::Worker(Worker &&other)
-        :Worker(other.name, other.age, other.sex, other.title) {
-            other.name.clear();
-            other.age = 0;
-            other.sex.clear();
-            other.title.clear();
-            }
-    Worker::Worker(string newName, int newAge)
-        :Worker(newName, newAge, "None", "None") {}
+
+//    Worker::Worker(string newName)
+//        :Worker(newName, 0, "None", "None") {}
+//    Worker::Worker(Worker &&other)
+//        :Worker(other.name, other.age, other.sex, other.title) {
+//            other.name.clear();
+//            other.age = 0;
+//            other.sex.clear();
+//            other.title.clear();
+//            }
+
+    Worker::Worker()
+        :Worker("None", 0, "None", "None", 0) {}
+//    Worker::Worker(string newName, int newAge)
+//        :Worker(newName, newAge, "None", "None", 0) {}
     Worker::Worker(string newName, int newAge, string newSex)
-        :Worker(newName, newAge, newSex, "None") {}
-    Worker::Worker(string newName, int newAge, string newSex, string newTitle)
-        :name{newName}, age{newAge}, sex{newSex}, title{newTitle} {}
+        :Worker(newName, newAge, newSex, "None", 0) {}
+    Worker::Worker(string newName, int newAge, string newSex, string newTitle, double newId)
+        :name{newName}, age{newAge}, sex{newSex}, title{newTitle}, id{newId} {}
     Worker::~Worker() {}
 

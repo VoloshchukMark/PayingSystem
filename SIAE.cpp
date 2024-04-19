@@ -3,6 +3,7 @@
 #include <string.h>
 #include "Worker.h"
 #include "Company.h"
+#include "Employee.h"
 
 
 using namespace std;
@@ -39,13 +40,24 @@ using namespace std;
 
     std::ostream &operator<<(std::ostream &os, const Worker &obj)  //extraction operator for Worker class
     {
-        cout<<"============================================="<<endl;
         os <<"Name: "<<obj.name<<endl;
         os <<"Age: "<<obj.age<<endl;
         os <<"Sex: "<<obj.sex<<endl;
         os <<"Job title: "<<obj.title<<endl;
-        cout<<"============================================="<<endl;
         return os;
+    }
+
+    std::ostream &operator<<(std::ostream &os, const Employee &obi) //extraction operator for Employee class
+    {
+        cout<<"============================================="<<endl;
+        os<<(Worker)obi;
+        os <<"Working time: "<<obi.workingTime<<endl;
+        os <<"Hourly rate: "<<obi.hourlyRate<<endl;
+        if (obi.salary <= 1)
+        {
+            os <<"Salary: Unknown"<<endl;
+        } else {os <<"Salary: "<<obi.salary<<endl;}
+//        cout<<"=============================================\n"<<endl;
     }
 
     std::istream &operator>>(std::istream &is, Worker &obj)         //insertion operator for Worker class

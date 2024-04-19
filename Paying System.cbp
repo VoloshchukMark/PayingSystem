@@ -34,6 +34,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Accountant.cpp" />
+		<Unit filename="Accountant.h" />
 		<Unit filename="BankSystem.cpp" />
 		<Unit filename="BankSystem.h" />
 		<Unit filename="Company.cpp" />
@@ -43,6 +45,8 @@
 		<Unit filename="Display.h" />
 		<Unit filename="Employee.cpp" />
 		<Unit filename="Employee.h" />
+		<Unit filename="Interface.cpp" />
+		<Unit filename="Interface.h" />
 		<Unit filename="Manager.cpp" />
 		<Unit filename="Manager.h" />
 		<Unit filename="SIAE.cpp" />
