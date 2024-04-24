@@ -14,12 +14,19 @@ private:
     double salary;
 
 public:
+    void setName(string newName);
+    void setAge(int newAge);
+    void setSex(string newSex);
+    void setTitle(string newTitle);
+    void setWorkingTime(double newWorkingTime);
+    void setHoulryRate(double newHourlyRate);
     void setTask(string newTask);
     void setSalary(double calculatedSalary);
     void setID(int newId);
 
     double getWorkingTime();
     double getHourlyRate();
+    string getTask();
     double getSalary();
     int getID();
 
@@ -31,7 +38,7 @@ public:
     void displayTask();
     void displaySalary();
 
-//    void copyClass(const Employee &obj)
+    void copyClass(Employee &obj);
 
     Employee(const Employee &obj);
     Employee(Employee &&obj);
@@ -42,6 +49,7 @@ public:
             Worker::operator=(obj);
             salary = obj.salary;
             workingTime = obj.workingTime;
+            hourlyRate = obj.hourlyRate;
             task = obj.task;
         }
         return *this;

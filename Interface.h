@@ -21,6 +21,7 @@ public:
     void employeeMenu();
 
     void collectInfo();
+    void saveInfo();
     void employeeCheck();
     void hireAnEmployee();
 

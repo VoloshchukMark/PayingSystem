@@ -13,8 +13,10 @@ using namespace std;
 void logAdmin();
 void logEmployee();
 void adminMenu();
+void employeeMenu();
 
 void collectInfo();
+void saveInfo();
 void employeeCheck();
 void hireAnEmployee();
 
@@ -37,12 +39,11 @@ int Interface::startMenu()
         break;
     case 4:
         return 0;
-        break;
     default:
         cout<<"Error! Try again.\n"<<endl;
-        startMenu();
         break;
     }
+    startMenu();
 }
 
 void Interface::logAdmin()
@@ -70,7 +71,7 @@ void Interface::logAdmin()
             {
                 signin1.close();
                 adminMenu();
-                break;
+                return;
             }
         }
         cout<<"Error! Wrong login or password.";
@@ -78,27 +79,27 @@ void Interface::logAdmin()
         login.clear();
         password.clear();
         signin1.close();
-        logAdmin();
         break;
     }
     case 2:{
         cout<<endl;
-        startMenu();
-        break;
+        return;
     }
     default:{
         cout<<"Error! Try again."<<endl;
-        logAdmin();
         break;
+        }
     }
-    }
+    logAdmin();
 }
 
 void Interface::logEmployee()
 {
-    string login;
+E1: string login;
     string password;
-    int Id;
+    int Id, IdCheck;
+    string infoCheck;
+
     cout<<"\n1.Log in \n2.Sign in \n3.Back"<<endl;
     int choose = 0;
     cin>>choose;
@@ -106,37 +107,99 @@ void Interface::logEmployee()
     {
     case 1:
         {
+            collectInfo();
+            cin.ignore();
+            cout<<"\nEnter your login: ";
+            getline(cin,login);
+            cout<<"Enter your password: ";
+            getline(cin,password);
+            ifstream EmployeeLogin("EmployeeAccess.txt");
+            while (!EmployeeLogin.eof())
+            {
+                EmployeeLogin>>Id>>infoCheck;
+                if(infoCheck == login)
+                {
+                    EmployeeLogin>>infoCheck;
+                    if(infoCheck == password)
+                    {
+                        for(Employee &obj : employees)
+                        {
+                            if(Id == obj.getId())
+                            {
+                                selectedEmployee = obj;
+                                if (selectedEmployee.getTitle() == "Accountant")
+                                {
+                                    cout<<"\nError! Current account has Accountant title.\n(Hint: You can login as Accountant in Start Menu.)\n";
+                                    system("pause");
+                                    return;
+                                }
+                                cout<<"\nLog in was successful.\n";
+                                system("pause");
+                                employeeMenu();
+                                return;
+                            }
+                        }
+                    }else {goto E2;}
+                } else {EmployeeLogin>>infoCheck;}
+E2:             cout<<infoCheck<<endl;
+            }
+            cout<<"Error! Wrong login or password.\n";
             break;
         }
     case 2:
         {
             cout<<endl<<"Enter your ID (you should get it from Administrator): ";
             cin>>Id;
+            ifstream EmployeesAccess("EmployeeAccess.txt");
+            while(!EmployeesAccess.eof())
+            {
+                EmployeesAccess>>IdCheck;
+                if(Id == IdCheck)
+                {
+                    cout<<"There is already registered account in data base with such ID.\n";
+                    goto E1;
+                    return;
+                }
+                EmployeesAccess>>infoCheck>>infoCheck;
+            }
             collectInfo();
             for (auto &obj : employees)
             {
                 if (obj.getId() == Id)
                 {
+                    selectedEmployee = obj;
+                    if (selectedEmployee.getTitle() == "Accountant")
+                    {
+                        cout<<"\nError! Current account belongs to Accountant title.\n(Hint: You can sign in as Accountant in Start Menu.)\n";
+                        system("pause");
+                        return;
+                    }
                     cout<<"Enter your login: ";
                     cin>>login;
                     cout<<"Enter your password: ";
                     cin>>password;
                     ofstream employeeSignIn("EmployeeAccess.txt", ios_base::app);
                     employeeSignIn<<Id<<"  "<<login<<"  "<<password<<endl;
-                    cout<<"The registration was successful.\n";
+                    cout<<"\nThe registration was successful.\n";
+                    employees.clear();
                     system("pause");
-                    break;
+                    employeeMenu();
+                    return;
                 }
             }
+            cout<<"There is no registered employee with such ID.\n";
+            break;
         }
     case 3:
         {
-            startMenu();
+            return;
+        }
+    default:{
+            cout<<"Error! Try again."<<endl;
             break;
         }
-        cout<<"There is no registered employee with such ID.\n";
-        logEmployee();
     }
+    logEmployee();
 }
 
 void Interface::adminMenu()
@@ -166,10 +229,67 @@ void Interface::adminMenu()
         case 3:{
             amountOfEmployee = 0;
             employees.clear();
-        startMenu();
-        break;
+            return;
+        }
+        default:{
+            cout<<"Error! Try again."<<endl;
+            break;
         }
     }
+    adminMenu();
+}
+
+void Interface::employeeMenu()
+{
+    system("cls");
+    cout<<"==================================================================="<<endl;
+    cout<<"Employee menu ("<<selectedEmployee.getName()<<"):\n";
+    cout<<"1.Work.\n";
+    cout<<"2.Show information.\n";
+    cout<<"3.Log out.\n";
+    cout<<"4.Save and Log out.\n";
+    int choice = 0;
+    cin>>choice;
+    switch (choice)
+    {
+    case 1:{
+            cout<<"\nWork in progress..."<<endl;
+            system("pause");
+            double newWorkingTime = (rand() % 10) + selectedEmployee.getWorkingTime();
+            selectedEmployee.setWorkingTime(newWorkingTime);
+            cout<<"\nCongratulation! Now your total working time is: "<<selectedEmployee.getWorkingTime()<<" hours!\n";
+            system("pause");
+            break;
+        }
+    case 2:{
+            selectedEmployee.displayInformation();
+            system("pause");
+            break;
+        }
+    case 3:{
+            return;
+        }
+    case 4:{
+            collectInfo();
+            for(auto &obj : employees)
+            {
+                if (selectedEmployee.getId() == obj.getId())
+                {
+                    obj.setWorkingTime(selectedEmployee.getWorkingTime());
+                    saveInfo();
+                    employees.clear();
+                    return;
+                }
+            }
+            employees.clear();
+            return;
+        }
+    default:{
+            cout<<"Error! Try again."<<endl;
+            break;
+        }
+    }
+    employeeMenu();
 }
 
 
@@ -198,6 +318,18 @@ void Interface::collectInfo()
             employeeDataR1.close();
         }
 }
+
+void Interface::saveInfo()
+{
+    ofstream EmployeeDataWr("EmployeeData.txt");
+    for(auto &obj : employees)
+    {
+        EmployeeDataWr<<obj.getName()<<"   "<<obj.getAge()<<"   "<<obj.getSex()<<"   "<<obj.getTitle()<<"   "<<obj.getWorkingTime()<<"   ";
+        EmployeeDataWr<<obj.getHourlyRate()<<"   "<<obj.getTask()<<"   "<<obj.getSalary()<<"   "<<obj.getId()<<"\n";
+    }
+    return;
+}
+
 
 void Interface::hireAnEmployee()
 {
@@ -262,7 +394,7 @@ a4:    cout<<"Enter the job title: ";
         goto a4;
     }
     srand(time(0));
-a5:    double ID = (rand()/299) + 1000;
+a5:    double ID = (rand()%299) + 1000;
     int double1 = 0;
     for (auto &obj : employees)
     {
@@ -286,7 +418,7 @@ a5:    double ID = (rand()/299) + 1000;
     amountOfEmployee++;
     cout<<"Finished. ID of the Employee is: "<<ID<<endl;
     system("pause");
-    adminMenu();
+    return;
 }
 
 
@@ -310,7 +442,7 @@ a5:    double ID = (rand()/299) + 1000;
                 }
             }
             system("pause");
-            adminMenu();
+            return;
     }
 
 

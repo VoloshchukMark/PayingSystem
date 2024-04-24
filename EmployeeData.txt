@@ -1,2 +1,4 @@
-YoungJoon Lee  34  Male  Chairman  0  0  None  1  1242
-Mark Voloshchuk  18  Male  Rookie  0  0  None  1  1259
+YoungJoon Lee   34   Male   Chairman   0   0   None   -2.08158e-272   1242
+Mark Voloshchuk   18   Male   Rookie   29   0   None   3.7494e-306   1259
+Olesia Voloshchuk   40   Female   Accountant   44   0   None   -9.60918e-234   1098
+Biba Boba   48   Other   Fullstack   68   0   None   3.75151e-306   1020

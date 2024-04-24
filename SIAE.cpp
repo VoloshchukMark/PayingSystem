@@ -52,7 +52,6 @@ using namespace std;
         cout<<"============================================="<<endl;
         os<<(Worker)obi;
         os <<"Working time: "<<obi.workingTime<<endl;
-        os <<"Hourly rate: "<<obi.hourlyRate<<endl;
         if (obi.salary <= 1)
         {
             os <<"Salary: Unknown"<<endl;

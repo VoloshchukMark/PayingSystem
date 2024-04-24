@@ -43,6 +43,7 @@ public:
             age = other.age;
             sex.assign(other.sex);
             title.assign(other.title);
+            id = other.id;
         }
         return *this;
     }

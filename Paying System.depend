@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 174 <<<<<<< Updated upstream
 
-1713456979 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
+1713513531 source:d:\study\programming\myprojects\payingsystem1\paying system\worker.cpp
 	"Worker.h"
 	<iostream>
 	<string.h>
@@ -22,12 +22,12 @@
 
 1709571308 ated upstream
 
-1713456979 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
+1713972455 d:\study\programming\myprojects\payingsystem1\paying system\worker.h
 	<iostream>
 	<string.h>
 	"Display.h"
 
-1713449601 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
+1713969942 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
 	<string.h>
 	<vector>
 	"Worker.h"
@@ -57,19 +57,19 @@
 	<iostream>
 	<string.h>
 
-1713509965 source:d:\study\programming\myprojects\payingsystem1\paying system\siae.cpp
+1713972551 source:d:\study\programming\myprojects\payingsystem1\paying system\siae.cpp
 	<iostream>
 	<string.h>
 	"Worker.h"
 	"Company.h"
 	"Employee.h"
 
-1713457047 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
+1713513475 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
 	"Employee.h"
 	<iostream>
 	<string.h>
 
-1713511783 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
+1713970161 d:\study\programming\myprojects\payingsystem1\paying system\employee.h
 	"Worker.h"
 	"Display.h"
 
@@ -105,7 +105,7 @@
 1713272183 d:\study\programming\myprojects\payingsystem1\paying system\accountant.h
 	"Employee.h"
 
-1713512390 source:d:\study\programming\myprojects\payingsystem1\paying system\interface.cpp
+1713975990 source:d:\study\programming\myprojects\payingsystem1\paying system\interface.cpp
 	"Interface.h"
 	<iostream>
 	<fstream>
@@ -115,7 +115,7 @@
 	"Employee.h"
 	<typeinfo>
 
-1713512309 d:\study\programming\myprojects\payingsystem1\paying system\interface.h
+1713973616 d:\study\programming\myprojects\payingsystem1\paying system\interface.h
 	"Employee.h"
 	<vector>
 

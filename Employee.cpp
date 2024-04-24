@@ -11,6 +11,30 @@ void Employee::displayInformation()
     cout<<"=============================================\n"<<endl;
 }
 
+    void Employee::setName(string newName)
+    {
+        this->changeName(newName);
+    }
+    void Employee::setAge(int newAge)
+    {
+        this->changeAge(newAge);
+    }
+    void Employee::setSex(string newSex)
+    {
+        this->changeSex(newSex);
+    }
+    void Employee::setTitle(string newTitle)
+    {
+        this->changeTitle(newTitle);
+    }
+    void Employee::setWorkingTime(double newWorkingTime)
+    {
+        workingTime = newWorkingTime;
+    }
+    void Employee::setHoulryRate(double newHourlyRate)
+    {
+        hourlyRate = newHourlyRate;
+    }
     void Employee::setTask(string newTask)
     {
         this->task = newTask;
@@ -34,6 +58,11 @@ void Employee::displayInformation()
     {
         return hourlyRate;
     }
+    string Employee::getTask()
+    {
+        return task;
+    }
+
     double Employee::getSalary()
     {
         return salary;
@@ -70,6 +99,20 @@ void Employee::displayInformation()
     }
 
 
+    void Employee::copyClass(Employee &obj)
+    {
+        this->setName(obj.getName());
+        this->setAge(obj.getAge());
+        this->setSex(obj.getSex());
+        this->setTitle(obj.getTitle());
+        this->setId(obj.getId());
+        this->setWorkingTime(obj.getWorkingTime());
+        this->setHoulryRate(obj.getHourlyRate());
+        this->setTask(obj.getTask());
+        this->setSalary(obj.getSalary());
+        this->setId(obj.getId());
+    }
+
 
     Employee::Employee(const Employee &obj)
         :Worker(obj), workingTime{obj.workingTime}, hourlyRate{obj.hourlyRate}, task{obj.task} {}
@@ -85,8 +128,8 @@ void Employee::displayInformation()
 
 Employee::Employee()
     :Employee("Unknown", 0, "Unknown", "Unknown", 0, 0.0, 0.0, "None", 0.0) {}
-//Employee::Employee(string newName)
-//    :Employee(newName, 0, "Unknown", "None", 0.0, 0.0) {}
+Employee::Employee(string newName)
+    :Employee(newName, 0, "Unknown", "Unknown", 0, 0.0, 0.0, "None", 0.0) {}
 //Employee::Employee(string newName, int newAge)
 //    :Employee(newName, newAge, "Unknown", "None", 0.0, 0.0) {}
 //Employee::Employee(string newName, int newAge, string newSex)

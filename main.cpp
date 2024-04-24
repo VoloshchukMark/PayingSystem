@@ -23,7 +23,7 @@ int BankSystem::numberOfSalaries = 0;
 
 int main()
 {
-    vector<Employee> employees;
+//    vector<Employee> employees;
     srand(time(0));
 //    Employee mark("Voloshchuk Mark", 18, "Male", "Furniture crafter", 40.0, 25.0);
 //    Accountant vova;
