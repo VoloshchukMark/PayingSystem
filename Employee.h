@@ -10,19 +10,19 @@ class Employee : public Worker
 private:
     double workingTime;
     double hourlyRate;
-    string task;
     double salary;
+    string task;
 
 public:
-    void setName(string newName);
-    void setAge(int newAge);
-    void setSex(string newSex);
-    void setTitle(string newTitle);
-    void setWorkingTime(double newWorkingTime);
-    void setHoulryRate(double newHourlyRate);
-    void setTask(string newTask);
-    void setSalary(double calculatedSalary);
-    void setID(int newId);
+    virtual void setName(string newName);
+    virtual void setAge(int newAge);
+    virtual void setSex(string newSex);
+    virtual void setTitle(string newTitle);
+    virtual void setWorkingTime(double newWorkingTime);
+    virtual void setHoulryRate(double newHourlyRate);
+    virtual void setTask(string newTask);
+    virtual void setSalary(double calculatedSalary);
+    virtual void setID(int newId);
 
     double getWorkingTime();
     double getHourlyRate();
@@ -34,11 +34,11 @@ public:
     virtual void displayAge() override;
     virtual void displaySex() override;
     virtual void displayTitle() override;
-    void displayInformation();
+    virtual void displayInformation();
     void displayTask();
     void displaySalary();
 
-    void copyClass(Employee &obj);
+    virtual void copyClass(Employee &obj);
 
     Employee(const Employee &obj);
     Employee(Employee &&obj);
@@ -61,7 +61,8 @@ public:
     Employee(string newName, int newAge, string newSex);
     Employee(string newName, int newAge, string newSex, string newTitle);
     Employee(string newName, int newAge, string newSex, string newTitle, double newWorkingTime);
-    Employee(string newName, int newAge, string newSex, string newTitle, double newId, double newWorkingTime, double newHourlyRate, string newTask, double newSalary);
+    Employee(string newName, int newAge, string newSex, string newTitle, double newId, double newWorkingTime, double newHourlyRate);
+    Employee(string newName, int newAge, string newSex, string newTitle, double newId, double newWorkingTime, double newHourlyRate, double newSalary, string newTask);
 
     friend std::ostream &operator<<(std::ostream &os, const Employee &obi);
 

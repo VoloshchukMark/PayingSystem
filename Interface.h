@@ -1,6 +1,7 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 #include "Employee.h"
+#include "Accountant.h"
 #include <vector>
 
 class Interface
@@ -9,6 +10,7 @@ public:
 
     int amountOfEmployee = 0;
     Employee selectedEmployee;
+    Accountant selectedAccountant;
     vector<Employee> employees;
 //    vector<int>::iterator counter, maximum;
 

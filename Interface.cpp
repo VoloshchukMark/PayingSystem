@@ -4,15 +4,18 @@
 #include <string.h>
 #include <ctime>
 #include <vector>
-#include "Employee.h"
 #include <typeinfo>
+#include "Employee.h"
+#include "Accountant.h"
 
 using namespace std;
 
 
 void logAdmin();
+void logAccountant();
 void logEmployee();
 void adminMenu();
+void accountantMenu();
 void employeeMenu();
 
 void collectInfo();
@@ -33,6 +36,7 @@ int Interface::startMenu()
         logAdmin();
         break;
     case 2:
+        logAccountant();
         break;
     case 3:
         logEmployee();
@@ -44,6 +48,7 @@ int Interface::startMenu()
         break;
     }
     startMenu();
+    return 0;
 }
 
 void Interface::logAdmin()
@@ -91,6 +96,117 @@ void Interface::logAdmin()
         }
     }
     logAdmin();
+}
+
+void Interface::logAccountant()
+{
+A1: string login;
+    string password;
+    int Id, IdCheck;
+    string infoCheck;
+
+    cout<<"\n1.Log in \n2.Sign in \n3.Back"<<endl;
+    int choose = 0;
+    cin>>choose;
+    switch (choose)
+    {
+    case 1:
+        {
+            collectInfo();
+            cin.ignore();
+            cout<<"\nEnter your login: ";
+            getline(cin,login);
+            cout<<"Enter your password: ";
+            getline(cin,password);
+            ifstream AccountantLogin("EmployeeAccess.txt");
+            while (!AccountantLogin.eof())
+            {
+                AccountantLogin>>Id>>infoCheck;
+                if(infoCheck == login)
+                {
+                    AccountantLogin>>infoCheck;
+                    if(infoCheck == password)
+                    {
+                        for(Employee &obj : employees)
+                        {
+                            if(Id == obj.getId())
+                            {
+                                selectedEmployee = obj;
+                                if (selectedEmployee.getTitle() != "Accountant")
+                                {
+                                    cout<<"\nError! Current account doesn't have Accountant title.\n(Hint: You can login as Employee in Start Menu.)\n";
+                                    system("pause");
+                                    return;
+                                }
+                                selectedAccountant.copyClass(selectedEmployee);
+                                cout<<"\nLog in was successful.\n";
+                                system("pause");
+                                accountantMenu();
+                                return;
+                            }
+                        }
+                    }else {goto A2;}
+                } else {AccountantLogin>>infoCheck;}
+A2:;
+            }
+            cout<<"Error! Wrong login or password.\n";
+            break;
+        }
+    case 2:
+        {
+            cout<<endl<<"Enter your ID (you should get it from Administrator): ";
+            cin>>Id;
+            ifstream AccountantAccess("EmployeeAccess.txt");
+            while(!AccountantAccess.eof())
+            {
+                AccountantAccess>>IdCheck;
+                if(Id == IdCheck)
+                {
+                    cout<<"There is already registered account in data base with such ID.\n";
+                    goto A1;
+                    return;
+                }
+                AccountantAccess>>infoCheck>>infoCheck;
+            }
+            collectInfo();
+            for (auto &obj : employees)
+            {
+                if (obj.getId() == Id)
+                {
+                    selectedEmployee = obj;
+                    if (selectedEmployee.getTitle() != "Accountant")
+                    {
+                        cout<<"\nError! Current account doesn't belongs to Accountant title.\n(Hint: You can sign in as Worker in Start Menu.)\n";
+                        system("pause");
+                        return;
+                    }
+                    selectedAccountant.copyClass(selectedEmployee);
+                    cout<<"Enter your login: ";
+                    cin>>login;
+                    cout<<"Enter your password: ";
+                    cin>>password;
+                    ofstream accountantSignIn("EmployeeAccess.txt", ios_base::app);
+                    accountantSignIn<<Id<<"  "<<login<<"  "<<password<<endl;
+                    cout<<"\nThe registration was successful.\n";
+                    employees.clear();
+                    system("pause");
+                    accountantMenu();
+                    return;
+                }
+            }
+            cout<<"There is no registered Accountant with such ID.\n";
+            break;
+        }
+    case 3:
+        {
+            return;
+        }
+    default:{
+            cout<<"Error! Try again."<<endl;
+            break;
+        }
+    }
+    logAccountant();
 }
 
 void Interface::logEmployee()
@@ -141,7 +257,7 @@ E1: string login;
                         }
                     }else {goto E2;}
                 } else {EmployeeLogin>>infoCheck;}
-E2:             cout<<infoCheck<<endl;
+E2:;
             }
             cout<<"Error! Wrong login or password.\n";
             break;
@@ -239,6 +355,84 @@ void Interface::adminMenu()
     adminMenu();
 }
 
+void Interface::accountantMenu()
+{
+    collectInfo();
+    system("cls");
+    cout<<"==================================================================="<<endl;
+    cout<<"Accountant menu ("<<selectedAccountant.getName()<<"):\n";
+    cout<<"1.Show information of employees.\n";
+    cout<<"2.Salary count.\n";
+    cout<<"3.Log out.\n";
+    int choice = 0;
+    cin>>choice;
+    switch (choice)
+    {
+    case 1:
+        {
+            employeeCheck();
+            break;
+        }
+    case 2:
+        {
+            system("cls");
+            int Id = 0;
+            double newHourlyRate = 0.0;
+            double selectedWorkingtime = 0.0;
+            double newSalary = 0.0;
+            collectInfo();
+            for(auto &obj : employees)
+            {
+                if(obj.getTitle() != "Accountant")
+                {
+                cout<<endl<<"-------------------------------------------------"<<endl;
+                cout<<"Name: "<<obj.getName()<<endl;
+                cout<<"Working time: "<<obj.getWorkingTime()<<" h."<<endl;
+                cout<<"ID: "<<obj.getId()<<endl;
+                cout<<"-------------------------------------------------"<<endl;
+                }
+            }
+A3:         cout<<"Enter the employee ID (Enter 1 for exit): ";
+            cin>>Id;
+            for(auto &obj : employees)
+            {
+                if(Id == obj.getID() && obj.getTitle() != "Accountant")
+                {
+A4:                 cout<<"\nEnter hourly rate (payment for 1 hour): ";
+                    cin>>newHourlyRate;
+                    if(newHourlyRate != 0.0 || newHourlyRate != 0)
+                    {
+                        selectedWorkingtime = obj.getWorkingTime();
+                        newSalary = newHourlyRate * selectedWorkingtime;
+                        obj.setSalary(newSalary);
+                        obj.setWorkingTime(0.0);
+                        cout<<"New salary was counted. Now it's: "<<newSalary<<" EUR"<<endl;
+                        system("pause");
+                        saveInfo();
+                        accountantMenu();
+                        return;
+                    } else
+                    {
+                        cout<<"Error! Hourly rate can't be NULL!"<<endl;
+                        goto A4;
+                    }
+                }else if(Id == 1)
+                {
+                    accountantMenu();
+                    return;
+                }
+            }
+            cout<<"Error! There is no employees with such id!\n\n";
+            goto A3;
+        }
+    case 3:
+        {
+            return;
+        }
+    }
+    accountantMenu();
+}
+
 void Interface::employeeMenu()
 {
     system("cls");
@@ -281,8 +475,6 @@ void Interface::employeeMenu()
                     return;
                 }
             }
-            employees.clear();
-            return;
         }
     default:{
             cout<<"Error! Try again."<<endl;
@@ -295,27 +487,26 @@ void Interface::employeeMenu()
 
 void Interface::collectInfo()
 {
-    employees.clear();
-        ifstream employeeDataR1("EmployeeData.txt", ios_base::out);
+        employees.clear();
+        ifstream employeeDataR("EmployeeData.txt", ios_base::out);
         string check;
-        employeeDataR1>>check;
+        employeeDataR>>check;
 //        cout<<endl<<check<<" "<<check.size()<<endl;
         if (check.size() > 1)
         {
             do{
             string name, sex, title, task;
-            double workingTime, hourlyRate, salary, Id;
-            int age = 0;
+            double workingTime, hourlyRate, salary = 0.0;
+            int age = 0, Id = 0;
             name = check + " ";
-            employeeDataR1>>check;
+            employeeDataR>>check;
             name += check;
-            employeeDataR1>>age>>sex>>title>>workingTime>>hourlyRate>>task>>salary>>Id;
-            Employee employeeInfo(name, age, sex, title, Id, workingTime, hourlyRate, task, salary);
-            employeeDataR1>>check;
+            employeeDataR>>age>>sex>>title>>workingTime>>hourlyRate;
+            employeeDataR>>salary>>Id;
+            Employee employeeInfo(name, age, sex, title, Id, workingTime, hourlyRate, salary, "None");
+            employeeDataR>>check;
             employees.push_back(employeeInfo);
-//            amountOfEmployee++;
-            }while (!employeeDataR1.eof());
-            employeeDataR1.close();
+            }while(!employeeDataR.eof());
         }
 }
 
@@ -325,7 +516,7 @@ void Interface::saveInfo()
     for(auto &obj : employees)
     {
         EmployeeDataWr<<obj.getName()<<"   "<<obj.getAge()<<"   "<<obj.getSex()<<"   "<<obj.getTitle()<<"   "<<obj.getWorkingTime()<<"   ";
-        EmployeeDataWr<<obj.getHourlyRate()<<"   "<<obj.getTask()<<"   "<<obj.getSalary()<<"   "<<obj.getId()<<"\n";
+        EmployeeDataWr<<obj.getHourlyRate()<<"   "<<obj.getSalary()<<"   "<<obj.getId()<<"\n";
     }
     return;
 }
@@ -389,10 +580,6 @@ a4:    cout<<"Enter the job title: ";
         cout<<"Please enter the job title properly!\n\n";
         goto a4;
     }else if (title == "Accountant")
-    {
-        cout<<"Sorry, you cant choose this title now\n\n";
-        goto a4;
-    }
     srand(time(0));
 a5:    double ID = (rand()%299) + 1000;
     int double1 = 0;
@@ -409,11 +596,11 @@ a5:    double ID = (rand()%299) + 1000;
     employeeDataWr<<title<<"  ";
     employeeDataWr<<0.0<<"  ";        //Working time.
     employeeDataWr<<0.0<<"  ";        //Hourly rate.
-    employeeDataWr<<"None"<<"  ";     //Task.
+//    employeeDataWr<<"None"<<"  ";     //Task.
     employeeDataWr<<0.0<<"  ";        //Salary.
     employeeDataWr<<ID<<"\n";
     employeeDataWr.close();
-    Employee employeeInfo(name, age, sex, title, ID, 0.0, 0.0, "None", 0.0);
+    Employee employeeInfo(name, age, sex, title, ID, 0.0, 0.0, 0.0, "None");
     employees.push_back(employeeInfo);
     amountOfEmployee++;
     cout<<"Finished. ID of the Employee is: "<<ID<<endl;
@@ -428,17 +615,19 @@ a5:    double ID = (rand()%299) + 1000;
         ifstream employeeDataR("EmployeeData.txt", ios_base::out);
         string check;
         employeeDataR>>check;
+        employeeDataR.close();
         if (check.size() == 0)
         {
             cout<<"There is no information about the employees at the moment.\nYou may add it in the Administrator menu.\n\n";
-            employeeDataR.close();
             system("pause");
-            adminMenu();
+            return;
         } else
             {
-                for(auto &obj : employees)
+                collectInfo();
+                for(Employee &obj : employees)
                 {
-                    obj.displayInformation();
+                    Employee showEmployee(obj);
+                    showEmployee.displayInformation();
                 }
             }
             system("pause");

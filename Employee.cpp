@@ -6,7 +6,18 @@ using namespace std;
 
 void Employee::displayInformation()
 {
+    cout<<"============================================="<<endl;
     cout<<*this;
+    if(this->getTitle() != "Accountant")
+    {
+        cout<<"Working time: "<<getWorkingTime()<<" h"<<endl;
+        if (getSalary() < 1.0)
+        {
+            cout<<"Salary: Unknown"<<endl;
+        } else {
+            cout<<"Salary: "<<getSalary()<<" EUR"<<endl;
+        }
+    }
     cout<<"ID: "<<this->getID()<<endl;
     cout<<"=============================================\n"<<endl;
 }
@@ -115,7 +126,7 @@ void Employee::displayInformation()
 
 
     Employee::Employee(const Employee &obj)
-        :Worker(obj), workingTime{obj.workingTime}, hourlyRate{obj.hourlyRate}, task{obj.task} {}
+        :Worker(obj), workingTime{obj.workingTime}, hourlyRate{obj.hourlyRate}, task{obj.task}, salary(obj.salary) {}
 //    Employee::Employee(Employee &&obj)
 //        :Worker(move(obj)), workingTime{obj.workingTime}, task{obj.task}
 //        {
@@ -127,17 +138,17 @@ void Employee::displayInformation()
 
 
 Employee::Employee()
-    :Employee("Unknown", 0, "Unknown", "Unknown", 0, 0.0, 0.0, "None", 0.0) {}
+    :Employee("Unknown", 0, "Unknown", "Unknown", 0, 0.0, 0.0, 0.0, "None") {}
 Employee::Employee(string newName)
-    :Employee(newName, 0, "Unknown", "Unknown", 0, 0.0, 0.0, "None", 0.0) {}
+    :Employee(newName, 0, "Unknown", "Unknown", 0, 0.0, 0.0,  0.0, "None") {}
 //Employee::Employee(string newName, int newAge)
 //    :Employee(newName, newAge, "Unknown", "None", 0.0, 0.0) {}
 //Employee::Employee(string newName, int newAge, string newSex)
 //    :Employee(newName, newAge, newSex, "None", 0.0,  0.0) {}
 //Employee::Employee(string newName, int newAge, string newSex, string newTitle)
 //    :Employee(newName, newAge, newSex, newTitle, 0.0, 0.0) {}
-//Employee::Employee(string newName, int newAge, string newSex, string newTitle, double newWorkingTime)
-//    :Employee(newName, newAge, newSex, newTitle, newWorkingTime, 0.0) {}
-Employee::Employee(string newName, int newAge, string newSex, string newTitle, double newId, double newWorkingTime, double newHourlyRate, string newTask, double newSalary)
-    :Worker(newName, newAge, newSex, newTitle, newId), workingTime{newWorkingTime}, hourlyRate{newHourlyRate}, task{newTask}, salary{newSalary} {}
+Employee::Employee(string newName, int newAge, string newSex, string newTitle, double newId, double newWorkingTime, double newHourlyRate)
+    :Employee(newName, newAge, newSex, newTitle, newId, newWorkingTime, newHourlyRate, 0.0, "None") {}
+Employee::Employee(string newName, int newAge, string newSex, string newTitle, double newId, double newWorkingTime, double newHourlyRate, double newSalary, string newTask)
+    :Worker(newName, newAge, newSex, newTitle, newId), workingTime{newWorkingTime}, hourlyRate{newHourlyRate}, salary{newSalary}, task{newTask} {}
 

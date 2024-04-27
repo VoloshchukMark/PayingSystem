@@ -29,6 +29,7 @@ public:
     void changeAge(int newAge);
     void changeSex(string newSex);
     void changeTitle(string newTitle);
+    void changeId(int newId);
 
     virtual void displayName() override;
     virtual void displayAge()override;

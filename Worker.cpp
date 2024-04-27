@@ -51,6 +51,10 @@ using namespace std;
     {
         title = newTitle;
     }
+    void Worker::changeId(int newId)
+    {
+        id = newId;
+    }
 
 
     void Worker::displayName()
