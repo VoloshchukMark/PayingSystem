@@ -1,5 +1,6 @@
 #include "Interface.h"
 #include <iostream>
+#include <sstream>
 #include <fstream>
 #include <string.h>
 #include <ctime>
@@ -22,15 +23,17 @@ void collectInfo();
 void saveInfo();
 void employeeCheck();
 void hireAnEmployee();
+int checkInt(string check);
 
 int Interface::startMenu()
 {
     system("cls");
     cout<<"==================================================================="<<endl;
     cout<<"Welcome! Choose your title: \n1.Administrator. \n2.Accountant. \n3.Employee. \n4.Exit."<<endl;
-    int title = 0;
-    cin>>title;
-    switch (title)
+    string title;
+//    try{
+    getline(cin, title);
+    switch (checkInt(title))
     {
     case 1:
         logAdmin();
@@ -43,10 +46,8 @@ int Interface::startMenu()
         break;
     case 4:
         return 0;
-    default:
-        cout<<"Error! Try again.\n"<<endl;
-        break;
     }
+//    }
     startMenu();
     return 0;
 }
@@ -56,13 +57,12 @@ void Interface::logAdmin()
     string login;
     string password;
     cout<<"\n1.Log in \n2.Back"<<endl;
-    int choose = 0;
-    cin>>choose;
-    switch (choose)
+    string choose;
+    getline(cin, choose);
+    switch (checkInt(choose))
     {
     case 1:{
         string check;
-        cin.ignore();
         cout<<"\nEnter your login: ";
         getline(cin,login);
         cout<<"Enter your password: ";
@@ -106,14 +106,13 @@ A1: string login;
     string infoCheck;
 
     cout<<"\n1.Log in \n2.Sign in \n3.Back"<<endl;
-    int choose = 0;
-    cin>>choose;
-    switch (choose)
+    string choose;
+    getline(cin, choose);
+    switch (checkInt(choose))
     {
     case 1:
         {
             collectInfo();
-            cin.ignore();
             cout<<"\nEnter your login: ";
             getline(cin,login);
             cout<<"Enter your password: ";
@@ -154,8 +153,10 @@ A2:;
         }
     case 2:
         {
+            string IdString;
             cout<<endl<<"Enter your ID (you should get it from Administrator): ";
-            cin>>Id;
+            getline(cin, IdString);
+            Id = checkInt(IdString);
             ifstream AccountantAccess("EmployeeAccess.txt");
             while(!AccountantAccess.eof())
             {
@@ -181,8 +182,21 @@ A2:;
                         return;
                     }
                     selectedAccountant.copyClass(selectedEmployee);
-                    cout<<"Enter your login: ";
+A5:                  cout<<"Enter your login: ";
                     cin>>login;
+                    ifstream accountantCheck("EmployeeAccess.txt");
+                    string check;
+                    accountantCheck>>check;
+                    while(!accountantCheck.eof())
+                    {
+                        accountantCheck>>check;
+                        if(check == login)
+                        {
+                            cout<<"\nError! Such login is already exist. Try something else.\n";
+                            goto A5;
+                        }
+                        accountantCheck>>check;
+                    }
                     cout<<"Enter your password: ";
                     cin>>password;
                     ofstream accountantSignIn("EmployeeAccess.txt", ios_base::app);
@@ -191,6 +205,8 @@ A2:;
                     employees.clear();
                     system("pause");
                     accountantMenu();
+                    accountantCheck.close();
+                    accountantSignIn.close();
                     return;
                 }
             }
@@ -217,9 +233,9 @@ E1: string login;
     string infoCheck;
 
     cout<<"\n1.Log in \n2.Sign in \n3.Back"<<endl;
-    int choose = 0;
-    cin>>choose;
-    switch (choose)
+    string choose;
+    getline(cin, choose);
+    switch (checkInt(choose))
     {
     case 1:
         {
@@ -264,8 +280,10 @@ E2:;
         }
     case 2:
         {
+            string IdString;
             cout<<endl<<"Enter your ID (you should get it from Administrator): ";
-            cin>>Id;
+            getline(cin, IdString);
+            Id = checkInt(IdString);
             ifstream EmployeesAccess("EmployeeAccess.txt");
             while(!EmployeesAccess.eof())
             {
@@ -290,8 +308,22 @@ E2:;
                         system("pause");
                         return;
                     }
-                    cout<<"Enter your login: ";
+E5:                 cout<<"Enter your login: ";
                     cin>>login;
+                    ifstream employeeCheck("EmployeeAccess.txt");
+                    string check;
+                    employeeCheck>>check;
+                    while(!employeeCheck.eof())
+                    {
+                        employeeCheck>>check;
+                        cout<<check<<endl;
+                        if(check == login)
+                        {
+                            cout<<"\nError! Such login is already exist. Try something else.\n";
+                            goto E5;
+                        }
+                        employeeCheck>>check>>check;
+                    }
                     cout<<"Enter your password: ";
                     cin>>password;
                     ofstream employeeSignIn("EmployeeAccess.txt", ios_base::app);
@@ -327,9 +359,9 @@ void Interface::adminMenu()
     cout<<"1.Show information of Employees.\n";
     cout<<"2.Hire an employee.\n";
     cout<<"3.Log out.\n";
-    int choice = 0;
-    cin>>choice;
-    switch (choice)
+    string choice;
+    getline(cin, choice);
+    switch (checkInt(choice))
     {
         case 1:{
         cout<<endl;
@@ -364,9 +396,9 @@ void Interface::accountantMenu()
     cout<<"1.Show information of employees.\n";
     cout<<"2.Salary count.\n";
     cout<<"3.Log out.\n";
-    int choice = 0;
-    cin>>choice;
-    switch (choice)
+    string choice;
+    getline(cin, choice);
+    switch (checkInt(choice))
     {
     case 1:
         {
@@ -442,9 +474,9 @@ void Interface::employeeMenu()
     cout<<"2.Show information.\n";
     cout<<"3.Log out.\n";
     cout<<"4.Save and Log out.\n";
-    int choice = 0;
-    cin>>choice;
-    switch (choice)
+    string choice;
+    getline(cin, choice);
+    switch (checkInt(choice))
     {
     case 1:{
             cout<<"\nWork in progress..."<<endl;
@@ -526,7 +558,8 @@ void Interface::hireAnEmployee()
 {
     ofstream employeeDataWr("EmployeeData.txt", ios_base::app);
     string name, firstName, secondName, sex, title, anything;
-    int age = 0, sexChoice = 0;
+    int age = 0;
+    string sexChoice;
 a1:    cout<<"Enter the first name: ";
     cin.ignore();
     getline(cin,firstName);
@@ -555,8 +588,8 @@ a2:    cout<<"Enter the age: ";
         goto a2;
     }
 a3:    cout<<"Select the sex:\n 1.Male. \n 2.Female. \n 3.Other. \n";
-    cin>>sexChoice;
-    switch (sexChoice)
+    getline(cin, sexChoice);
+    switch (checkInt(sexChoice))
     {
     case 1:
         sex = "Male";
@@ -634,6 +667,24 @@ a5:    double ID = (rand()%299) + 1000;
             return;
     }
 
+
+    int Interface::checkInt(string check)
+    {
+        stringstream inserted_value(check);
+        string dump;
+        int int_value;
+        if(inserted_value >> int_value)
+        {
+            inserted_value>>dump;
+            if(dump.empty())
+            {
+                return int_value;
+            }
+        }
+        cout<<"";
+        return 999;
+//        return 999;
+    }
 
 
     Interface::Interface() {}

@@ -26,6 +26,7 @@ public:
     void saveInfo();
     void employeeCheck();
     void hireAnEmployee();
+    int checkInt(string check);
 
 
     Interface();

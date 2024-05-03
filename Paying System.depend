@@ -27,7 +27,7 @@
 	<string.h>
 	"Display.h"
 
-1714053354 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
+1714464239 source:d:\study\programming\myprojects\payingsystem1\paying system\main.cpp
 	<string.h>
 	<vector>
 	"Worker.h"
@@ -65,7 +65,7 @@
 	"Employee.h"
 	"Accountant.h"
 
-1714214754 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
+1714215294 source:d:\study\programming\myprojects\payingsystem1\paying system\employee.cpp
 	"Employee.h"
 	<iostream>
 	<string.h>
@@ -106,9 +106,10 @@
 1714049122 d:\study\programming\myprojects\payingsystem1\paying system\accountant.h
 	"Employee.h"
 
-1714212530 source:d:\study\programming\myprojects\payingsystem1\paying system\interface.cpp
+1714464345 source:d:\study\programming\myprojects\payingsystem1\paying system\interface.cpp
 	"Interface.h"
 	<iostream>
+	<sstream>
 	<fstream>
 	<string.h>
 	<ctime>
@@ -117,7 +118,7 @@
 	"Employee.h"
 	"Accountant.h"
 
-1714049076 d:\study\programming\myprojects\payingsystem1\paying system\interface.h
+1714314636 d:\study\programming\myprojects\payingsystem1\paying system\interface.h
 	"Employee.h"
 	"Accountant.h"
 	<vector>

@@ -1,5 +1,5 @@
 YoungJoon Lee   34   Male   Chairman   45   45   23   1242
-Mark Voloshchuk   18   Male   Employee   126   0   3150   1192
+Mark Voloshchuk   18   Male   Employee   0   0   1940   1192
 Olesia Voloshchuk   40   Female   Accountant   0   0   0   1098
 Biba Boba   48   Other   Fullstack   0   0   0   1020
 Serhii Voloshchuk   19   Other   Worker   0   0   6020   1036

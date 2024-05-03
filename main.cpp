@@ -23,19 +23,19 @@ int BankSystem::numberOfSalaries = 0;
 
 int main()
 {
+    srand(time(0));
 
+    Interface interface1;
+    interface1.startMenu();
+    return 0;
+}
 
 
 //    vector<Employee> employees;
-    srand(time(0));
 //    Employee mark("Voloshchuk Mark", 18, "Male", "Furniture crafter", 40.0, 25.0);
 //    Accountant vova;
 //    vova.calculateSalary(mark);
 //    mark.displaySalary();
-
-
-    Interface interface1;
-    interface1.startMenu();
 
 //Manager serhiy("Serhiy", 18, "Male");
 //Department infotech("Name", 20, 99.9);
@@ -54,10 +54,6 @@ int main()
 //    Employee serhiyo;
 //    serhiyo.operator=(vova);
 //    serhiyo.displayInformation();
-
-    return 0;
-}
-
 
 
 
